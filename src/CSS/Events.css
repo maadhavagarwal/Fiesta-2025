@@ -1,0 +1,19 @@
+.cardstyle img{
+    width: 16rem;
+}
+
+.cardstyle:hover {
+    cursor: pointer;
+    scale: 1.10;
+}
+
+.cardstyle{
+    transition: 0.4s;
+    border-radius: 20px;
+
+}
+.containe1{
+    background-color:antiquewhite;
+    width: 100%;
+    height:100%;
+}

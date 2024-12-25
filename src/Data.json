@@ -1,0 +1,101 @@
+{
+    "businessfair":{
+        "EventName":"Business Fair",
+        "Description":"The Business Fair at Fiesta is a thrilling arena of student-driven innovation, where groundbreaking ideas and entrepreneurial passion converge. It’s a dynamic showcase of creativity and ambition, sparking collaborations and bringing visionary concepts to life. Witness the future unfold!",
+
+        "Fee":900,
+        "Date":"",
+        "Rule":""
+    },
+    "sparkstudio":{
+        "EventName":"Spark Studio",
+        "Description":"Spark Studio, an electrifying event at Fiesta, features the thrilling Shark Tank challenge. Entrepreneurs pitch their ideas to savvy investors, igniting sparks of innovation and potential business venturess",
+        "Fee":486,
+        "Date":"",
+        "Rule":""
+    },
+    "eco-quiz":{
+        "EventName":"Ecoquiz",
+        "Description":"The Eco Quiz is an exciting competition designed to raise awareness about pressing environmental issues like climate change and biodiversity. Test your knowledge, spark curiosity, and get inspired to take action for a sustainable future! ",
+        "Fee":81,
+        "Date":"",
+        "Rule":""
+    },
+    "elocution":{
+        "EventName":"Elocution",
+        "Description":"The Elocution competition at Fiesta is a high-energy platform where voices rise to inspire, challenge, and captivate. Speakers will command the stage, delivering powerful speeches that spark ideas, ignite passions, and leave a lasting impact. Step up, speak out, and let your words make waves!",
+        "Fee":81,
+        "Date":"",
+        "Rule":""
+    },
+    "mmf":{
+        "EventName":"Mass&MissFIesta",
+        "Description":"Step into the spotlight and unleash your entrepreneurial brilliance at Fiesta’s ultimate business pageant! Compete for the coveted titles of Master and Miss Fiesta by showcasing your innovative ideas and sharp business acumen. Seize your moment to shine and leave a lasting mark!",
+        "Fee":81,
+        "Date":"",
+        "Rule":""
+    },
+    "mystry":{
+        "EventName":"Mystry",
+        "Description":"vjnkjnv nfsnfs dfjskdnfsf sfjnskfnskdnf sfjksnfjsnf sjfnsfjns fjfnsjnfsjnf fkjsnfjnsf sjnfs f fnsfjnsofina f koinfon d sjdnfosijf oisjfsn f isjfks f ijf sfisdkf snfsijms fksd fkjnsofnm f sfojskf s skjfehgheg hehgeg huypsuibdbgey gegliwrygb gygfihrfiuhw end...",
+        "Fee":81,
+        "Date":"",
+        "Rule":""
+    },
+    "miw":{
+        "EventName":"Mock Interview Workshop",
+        "Description":"Fiesta's mock interviews equip youth to ace challenging interviews through real-world simulations. Build confidence, sharpen communication skills, and gain valuable feedback to excel in high-stakes situations!",
+        "Fee":81,
+        "Date":"",
+        "Rule":""
+    },
+    "ppt":{
+        "EventName":"ppt",
+        "Description":"A PPT case study is your gateway to unraveling a real-world mystery! Dive into a gripping narrative packed with challenges, bold analyses, and game-changing solutions, all brought to life through stunning visuals and powerful insights. It's not just a presentation—it's an electrifying journey of discovery and innovation!",
+        "Fee":81,
+        "Date":"",
+        "Rule":""
+    },
+    "seminar1":{
+        "EventName":"From Idea to Impact – Motivational Session by Successful Entrepreneur/ Start=up Founder",
+        "Description":"Get inspired by a successful entrepreneur as they share their journey of turning an idea into reality. Learn valuable insights, practical advice, and strategies to overcome challenges and achieve your entrepreneurial goals. Don’t miss the chance to connect, learn, and ignite your entrepreneurial spirit!",
+        "Fee":0,
+        "Date":"",
+        "Rule":""
+    },
+    "seminar2":{
+        "EventName":"Session on How to plan for Start-up and legal & Ethical ",
+        "Description":"Discover the essentials of start-up planning, including crafting a business plan, understanding legal frameworks, and following ethical practices. Gain insights into registration, compliance, and building a principled business. A must-attend for aspiring entrepreneurs aiming for sustainable success!",
+        "Fee":0,
+        "Date":"",
+        "Rule":""
+    },
+    "seminar3":{
+        "EventName":"Workshop on “Raising Capital and Managing Finance for Startups”",
+        "Description":"Master the essentials of securing funding and managing finances for your startup. Learn about funding options, budgeting, cash flow management, and investor relations. Perfect for aspiring entrepreneurs looking to build financial success!",
+        "Fee":0,
+        "Date":"",
+        "Rule":""
+    },
+    "seminar4":{
+        "EventName":"Workshop on “Entrepreneuship and Innovation” as a Career Opportunity",
+        "Description":"Explore the exciting world of entrepreneurship and innovation. Learn how to turn ideas into impactful ventures and discover the skills needed to succeed in this dynamic career path.",
+        "Fee":0,
+        "Date":"",
+        "Rule":""
+    },
+    "seminar5":{
+        "EventName":"Session on AccelaratorsIncubation Opporutnjities for Students & Faculties – Early Stage Entrepreneurs",
+        "Description":"Discover how accelerators and incubation programs can support your entrepreneurial journey. Learn about resources, mentorship, and funding opportunities tailored for students and faculties.",
+        "Fee":0,
+        "Date":"",
+        "Rule":""
+    },
+    "seminar6":{
+        "EventName":"Expert Talk on Innovation Development, TRL, and Tech Transfer",
+        "Description":"Gain insights into the process of innovation development, understanding Technology Readiness Levels (TRL), commercialization of lab technologies, and effective tech transfer strategies.",
+        "Fee":0,
+        "Date":"",
+        "Rule":""
+    }
+}
