@@ -7,7 +7,7 @@ import { Toaster } from 'react-hot-toast';
 import Home from './Components/Home';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-
+import Footer from './Components/Footer';
 function App() {
   return (
     <BrowserRouter>
@@ -19,6 +19,7 @@ function App() {
         <Route path="/eventdetails/:eventname/enrollnow" element={<EnrollNow />} />
       </Routes>
       <Toaster />
+      <Footer/>
     </BrowserRouter>
   );
 }

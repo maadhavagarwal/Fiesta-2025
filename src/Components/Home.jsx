@@ -1,9 +1,87 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+
 import "../CSS/Home.css";
-import bgi from "../Images/tpolyb.jpg"; // Correct import
-import videoFile from "../Images/Fiesta 2.mp4";
+import bgi from "../Images/tpolyb.jpg"; // Background image
+import videoFile from "../Images/Fiesta 2.mp4"; // Video file
+import iicLogo from "../Images/IIC logo.png"; // IIC logo
+import tpolyL from "../Images/tpolyLogo.png"; // Thakur Polytechnic logo
+import nssLogo from "../Images/nssLogo.png"; // NSS logo
+import gcLogo from "../Images/gcLogo.png"; // Green Club logo
+import carouselImg1 from "../Images/1.png"; // Add the actual image paths
+import carouselImg2 from "../Images/2.png";
+import carouselImg3 from "../Images/3.png";
+import carouselImg4 from "../Images/3.png";
+import carouselImg5 from "../Images/3.png";
+import carouselImg6 from "../Images/3.png";
+import carouselImg7 from "../Images/3.png";
+import carouselImg8 from "../Images/3.png";
 
 export default function Home() {
+  const [carouselActive, setCarouselActive] = useState(false);
+  const [cardsVisible, setCardsVisible] = useState(false);
+  const carouselRef = useRef(null);
+  const cardsRef = useRef(null); // Reference for the About Us cards section
+
+  const images = [
+    carouselImg1,
+    carouselImg2,
+    carouselImg3,
+    carouselImg4,
+    carouselImg5,
+    carouselImg6,
+    carouselImg7,
+    carouselImg8
+  ];
+
+  const navigate = useNavigate();
+
+  // Intersection Observer for Carousel Section
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setCarouselActive(true);
+        } else {
+          setCarouselActive(false);
+        }
+      },
+      {
+        threshold: 0.5,
+      }
+    );
+    if (carouselRef.current) {
+      observer.observe(carouselRef.current);
+    }
+    return () => {
+      if (carouselRef.current) {
+        observer.unobserve(carouselRef.current);
+      }
+    };
+  }, []);
+
+  // Intersection Observer for About Us Cards
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setCardsVisible(true);
+        }
+      },
+      {
+        threshold: 0.2, // Trigger when 20% of the section is visible
+      }
+    );
+    if (cardsRef.current) {
+      observer.observe(cardsRef.current);
+    }
+    return () => {
+      if (cardsRef.current) {
+        observer.unobserve(cardsRef.current);
+      }
+    };
+  }, []);
+
   return (
     <div>
       {/* Hero Section with Background Image */}
@@ -18,21 +96,15 @@ export default function Home() {
           <source src={videoFile} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        
       </div>
 
       {/* Introduction Section */}
       <section className="Intro-us">
         <h2>Introduction</h2>
         <p>
-          Welcome to the 2nd Anniversary of Fiesta, an extraordinary event that
-          brings together business development, entrepreneurship, environmental
-          sustainability, and social impact—all under one roof at Thakur
-          Polytechnic. Fiesta is not just an event, but a platform designed to
-          inspire and empower individuals in their professional journeys while
-          fostering environmental awareness and community service. This year’s
-          celebration builds on the success of the first edition, offering an
-          even greater variety of opportunities for growth and collaboration.
+          Welcome to the 2nd Anniversary of Fiesta!
+          Fiesta is an extraordinary event that brings together business development, entrepreneurship, environmental sustainability, and social impact—all under one roof at Thakur Polytechnic.
+          Fiesta 2024 builds on the success of the first edition, offering an even greater variety of opportunities for growth and collaboration. This year, the event focuses on creating synergies between business leaders, aspiring entrepreneurs, industry experts, and social activists. Participants will have access to workshops, keynote sessions, and panel discussions that address the pressing issues of our time, from building sustainable businesses to creating positive social change.
         </p>
       </section>
 
@@ -55,17 +127,44 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Us Section */}
-      <section className="about-us">
+      {/* Carousel Section for Last Year's Images */}
+      <section className="carousel-section" ref={carouselRef}>
+        <h2>Last Year's Highlights</h2>
+        <div className={`carousel ${carouselActive ? "active" : ""}`}>
+          {images.map((image, index) => (
+            <img key={index} src={image} alt={`Fiesta 2024 - Image ${index + 1}`} className="carousel-image" />
+          ))}
+        </div>
+      </section>
+
+      {/* About Us Section with Animation */}
+      <section className="about-us" ref={cardsRef}>
         <h2>About Us</h2>
         <p>
-          In 2023, Fiesta at Thakur Polytechnic successfully brought together
-          business development, entrepreneurship, sustainability, and social
-          impact. From innovative showcases to workshops and seminars, Fiesta
-          empowered participants, fostered environmental awareness, and
-          promoted community service, resulting in great success and
-          collaboration resulting in more than 5000 in foot-fall.
+          Thakur Polytechnic (Tpoly), established in 1998, is affiliated with MSBTE and offers AICTE-approved courses recognized by the Government of Maharashtra.
         </p>
+        <div className={`about-us-cards ${cardsVisible ? "animate-cards" : ""}`}>
+          <div className="about-us-card">
+            <img src={tpolyL} alt="Thakur Polytechnic" />
+            <h3>Thakur Polytechnic</h3>
+            <p>Thakur Polytechnic is accredited by NBA and has received several awards.</p>
+          </div>
+          <div className="about-us-card">
+            <img src={iicLogo} alt="IIC" />
+            <h3>IIC</h3>
+            <p>Thakur Polytechnic's Institution Innovation Council (IC) 202217862 empowers visionaries by fostering innovation and entrepreneurial journeys. With a mission to ignite ideas and build resilience, IIC creates a dynamic ecosystem where creativity thrives, skills are sharpened, and ventures grow into successful realities.</p>
+          </div>
+          <div className="about-us-card">
+            <img src={gcLogo} alt="Green Club" />
+            <h3>Green Club</h3>
+            <p>Green Club Vasundhara (3143) promotes sustainable living and environmental awareness. It encourages eco-friendly habits and community participation in conservation. Collaborating with UNICEF, the club aligns with global sustainability goals, inspiring individuals to make small but impactful changes for a greener future..</p>
+          </div>
+          <div className="about-us-card">
+            <img src={nssLogo} alt="NSS" />
+            <h3>NSS</h3>
+            <p>Thakur Polytechnic actively participates in NSS, promoting selfless service through the motto "NOT ME BUT YOU." Students engage in community welfare, developing empathy and social responsibility. The NSS activities at Thakur Polytechnic reflect a commitment to societal well-being and positive change through continuous efforts..</p>
+          </div>
+        </div>
       </section>
     </div>
   );
