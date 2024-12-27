@@ -5,7 +5,6 @@ import iicLogo from "../Images/IIC logo.png";
 import AICTClogo from "../Images/AICTC logo.png";
 import nssLogo from "../Images/nssLogo.png";
 import gcLogo from "../Images/gcLogo.png";
-// import tpolyLogo from "../Images/Tpoly logo.png";
 import fiestaLogo from "../Images/fiestaLogo.png";
 
 function Navbar() {
@@ -14,26 +13,24 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-black">
       <div className="container-fluid">
-        {/* Logo Section */}
+        {/* Brand Logo */}
         <Link className="navbar-brand d-flex align-items-center" to="/">
-          {/* <img src={fiestaLogo} alt="TPoly Logo" className="logo" />
-          <img src={tpolyLogo} alt="TPoly Logo" className="logo" /> */}
-          <span className="ms-2">Fiesta</span>
+          <img src={fiestaLogo} alt="Fiesta Logo" className="logo me-2" />
+          <span>Fiesta</span>
         </Link>
 
-        {/* Offcanvas Toggle Button */}
+        {/* Toggler */}
         <button
           className="navbar-toggler"
           type="button"
           data-bs-toggle="offcanvas"
           data-bs-target="#offcanvasNavbar"
           aria-controls="offcanvasNavbar"
-          aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        {/* Offcanvas Menu */}
+        {/* Offcanvas */}
         <div
           className="offcanvas offcanvas-end"
           tabIndex="-1"
@@ -41,7 +38,9 @@ function Navbar() {
           aria-labelledby="offcanvasNavbarLabel"
         >
           <div className="offcanvas-header">
-           
+            <h5 className="offcanvas-title" id="offcanvasNavbarLabel">
+              Menu
+            </h5>
             <button
               type="button"
               className="btn-close text-reset"
@@ -56,10 +55,9 @@ function Navbar() {
               <img src={nssLogo} alt="NSS Logo" className="logo" />
               <img src={AICTClogo} alt="AICTC Logo" className="logo" />
               <img src={gcLogo} alt="GC Logo" className="logo" />
-              <img src={fiestaLogo} alt="Fiesta Logo" className="logo" />
             </div>
 
-            {/* Navigation Links */}
+            {/* Nav Links */}
             <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
               <li className="nav-item">
                 <button

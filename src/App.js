@@ -5,6 +5,8 @@ import EventDetails from './Components/EventDetails';
 import EnrollNow from './Components/EnrollNow';
 import { Toaster } from 'react-hot-toast';
 import Home from './Components/Home';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 function App() {
   return (
