@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 import "../CSS/Home.css";
-import bgi from "../Images/tpolyb.jpg"; // Background image
 import videoFile from "../Images/Fiesta 2.mp4"; // Video file
 import iicLogo from "../Images/IIC logo.png"; // IIC logo
 import tpolyL from "../Images/tpolyLogo.png"; // Thakur Polytechnic logo
@@ -84,14 +83,13 @@ export default function Home() {
 
   return (
     <div>
-      {/* Hero Section with Background Image */}
-      <div className="hero-section" style={{ backgroundImage: `url(${bgi})` }}>
+      {/* Hero Section with Video Only */}
+      <div className="hero-section">
         <video
           className="hero-video"
           autoPlay
           loop
           muted
-          poster={bgi} // Fallback image for video
         >
           <source src={videoFile} type="video/mp4" />
           Your browser does not support the video tag.
@@ -152,17 +150,17 @@ export default function Home() {
           <div className="about-us-card">
             <img src={iicLogo} alt="IIC" />
             <h3>IIC</h3>
-            <p>Thakur Polytechnic's Institution Innovation Council (IC) 202217862 empowers visionaries by fostering innovation and entrepreneurial journeys. With a mission to ignite ideas and build resilience, IIC creates a dynamic ecosystem where creativity thrives, skills are sharpened, and ventures grow into successful realities.</p>
+            <p>Thakur Polytechnic's Institution Innovation Council (IIC) fosters innovation and entrepreneurship.</p>
           </div>
           <div className="about-us-card">
             <img src={gcLogo} alt="Green Club" />
             <h3>Green Club</h3>
-            <p>Green Club Vasundhara (3143) promotes sustainable living and environmental awareness. It encourages eco-friendly habits and community participation in conservation. Collaborating with UNICEF, the club aligns with global sustainability goals, inspiring individuals to make small but impactful changes for a greener future..</p>
+            <p>The Green Club promotes sustainable living and environmental awareness.</p>
           </div>
           <div className="about-us-card">
             <img src={nssLogo} alt="NSS" />
             <h3>NSS</h3>
-            <p>Thakur Polytechnic actively participates in NSS, promoting selfless service through the motto "NOT ME BUT YOU." Students engage in community welfare, developing empathy and social responsibility. The NSS activities at Thakur Polytechnic reflect a commitment to societal well-being and positive change through continuous efforts..</p>
+            <p>NSS activities at Thakur Polytechnic reflect a commitment to societal well-being and positive change.</p>
           </div>
         </div>
       </section>

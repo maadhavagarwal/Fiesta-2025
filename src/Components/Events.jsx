@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../CSS/Events.css";
 import Bf from "../Images/1.png";
 import EQ from "../Images/2.png";
@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Events() {
   const Navigate = useNavigate();
+  const [cardStyle, setCardStyle] = useState({});
 
   const events = [
     {
@@ -38,7 +39,7 @@ export default function Events() {
     {
       eventName: "mmf",
       poster: mmf,
-      displayName: "Master & Miss FIesta",
+      displayName: "Master & Miss Fiesta",
     },
     {
       eventName: "ecoquiz",
@@ -48,7 +49,7 @@ export default function Events() {
     {
       eventName: "ppt",
       poster: ppt,
-      displayName: "PPT Case study",
+      displayName: "PPT Case Study",
     },
     {
       eventName: "seminars",
@@ -57,35 +58,62 @@ export default function Events() {
     },
   ];
 
+  const handleMouseMove = (e) => {
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const xRot = ((y / rect.height) - 0.5) * -20; // Tilt effect
+    const yRot = ((x / rect.width) - 0.5) * 20;
+
+    setCardStyle({
+      transform: `rotateX(${xRot}deg) rotateY(${yRot}deg)`,
+    });
+  };
+
+  const handleMouseLeave = () => {
+    setCardStyle({
+      transform: `rotateX(0deg) rotateY(0deg)`,
+    });
+  };
+
   return (
     <div className="outer">
-      <div className="container">
-        <div className="row">
-          {events.map((value, index) => (
-            <div
-              key={index}
-              className="col-lg-3 col-md-4 col-sm-6 col-12 d-flex justify-content-center mb-4"
-            >
+      <div
+        className="outer-card"
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        style={cardStyle}
+      >
+        <div className="container">
+          <div className="row">
+            {events.map((value, index) => (
               <div
-                className="card-container"
-                onClick={() =>
-                  value.eventName === "seminars"
-                    ? Navigate(`/seminars`)
-                    : Navigate(`/eventdetails/${value.eventName}`)
-                }
+                key={index}
+                className="col-lg-3 col-md-4 col-sm-6 col-12 d-flex justify-content-center mb-4"
               >
-                <img
-                  src={value.poster}
-                  className="event-image"
-                  alt={`${value.displayName} Poster`}
-                />
-                <div className="event-overlay">
-                  <h3 className="event-title">{value.displayName}</h3>
-                  <p className="event-subtitle">Click to Learn More</p>
+                <div
+                  className="card-container"
+                  onClick={() =>
+                    value.eventName === "seminars"
+                      ? Navigate(`/seminars`)
+                      : Navigate(`/eventdetails/${value.eventName}`)
+                  }
+                >
+                  <img
+                    src={value.poster}
+                    className="event-image"
+                    alt={`${value.displayName} Poster`}
+                  />
+                  <div className="event-overlay">
+                    <h3 className="event-title">{value.displayName}</h3>
+                    <p className="event-subtitle">Click to Learn More</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>
