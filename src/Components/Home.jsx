@@ -8,12 +8,12 @@ import iicLogo from "../Images/IIC logo.png"; // IIC logo
 import tpolyL from "../Images/tpolyLogo.png"; // Thakur Polytechnic logo
 import nssLogo from "../Images/nssLogo.png"; // NSS logo
 import gcLogo from "../Images/gcLogo.png"; // Green Club logo
-import carouselImg1 from "../Images/1.png"; // Add the actual image paths
-import carouselImg2 from "../Images/2.png";
-import carouselImg3 from "../Images/3.png";
-import carouselImg4 from "../Images/3.png";
-import carouselImg5 from "../Images/3.png";
-import carouselImg6 from "../Images/3.png";
+import carouselImg1 from "../Images/s1.png"; // Add the actual image paths
+import carouselImg2 from "../Images/s2.png";
+import carouselImg3 from "../Images/s3.png";
+import carouselImg4 from "../Images/s4.png";
+import carouselImg5 from "../Images/5.png";
+import carouselImg6 from "../Images/6.png";
 import carouselImg7 from "../Images/3.png";
 import carouselImg8 from "../Images/3.png";
 

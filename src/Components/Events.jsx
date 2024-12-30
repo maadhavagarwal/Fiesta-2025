@@ -4,8 +4,11 @@ import Bf from "../Images/1.png";
 import EQ from "../Images/2.png";
 import SS from "../Images/4.png";
 import EL from "../Images/3.png";
+import SE from "../Images/5.png";
+import mmf from "../Images/13.png";
+import ppt from "../Images/14.png";
+import miw from "../Images/12.png";
 import flogo from "../Images/fiestaLogo.png";
-import iicLogo from "../Images/iicLogo.png";
 import { useNavigate } from "react-router-dom";
 
 export default function Events() {
@@ -15,78 +18,75 @@ export default function Events() {
     {
       eventName: "businessfair",
       poster: Bf,
+      displayName: "Business Fair",
     },
     {
       eventName: "sparkstudio",
       poster: SS,
+      displayName: "Spark Studio",
     },
     {
       eventName: "elocution",
       poster: EL,
-    },
-    {
-      eventName: "eco-quiz",
-      poster: EQ,
-    },
-    {
-      eventName: "mmf",
-      poster: flogo,
+      displayName: "Elocution",
     },
     {
       eventName: "miw",
-      poster: flogo,
+      poster: miw,
+      displayName: "Mock Interview Workshop",
+    },
+    {
+      eventName: "mmf",
+      poster: mmf,
+      displayName: "Master & Miss FIesta",
+    },
+    {
+      eventName: "ecoquiz",
+      poster: EQ,
+      displayName: "Eco Quiz",
     },
     {
       eventName: "ppt",
-      poster: flogo,
+      poster: ppt,
+      displayName: "PPT Case study",
     },
     {
-      eventName: "mystry",
-      poster: flogo,
-    },
-    {
-      eventName: "seminar1",
-      poster: flogo,
-    },
-    {
-      eventName: "seminar2",
-      poster: flogo,
-    },
-    {
-      eventName: "seminar3",
-      poster: flogo,
-    },
-    {
-      eventName: "seminar4",
-      poster: flogo,
-    },
-    {
-      eventName: "seminar5",
-      poster: flogo,
-    },
-    {
-      eventName: "seminar6",
-      poster: flogo,
+      eventName: "seminars",
+      poster: SE,
+      displayName: "Seminars",
     },
   ];
 
   return (
-    <div className="container">
-      <div className="d-flex justify-content-center flex-wrap">
-        {events.map((value, index) => (
-          <div
-            key={index}
-            className="card mt-5 shadow p-3 mb-5 bg-light rounded mx-2 cardstyle"
-            style={{ width: "18rem" }}
-            onClick={() => Navigate(`/eventdetails/${value.eventName}`)}
-          >
-            <img
-              src={value.poster}
-              className="card-img-top"
-              alt="Loading......."
-            />
-          </div>
-        ))}
+    <div className="outer">
+      <div className="container">
+        <div className="row">
+          {events.map((value, index) => (
+            <div
+              key={index}
+              className="col-lg-3 col-md-4 col-sm-6 col-12 d-flex justify-content-center mb-4"
+            >
+              <div
+                className="card-container"
+                onClick={() =>
+                  value.eventName === "seminars"
+                    ? Navigate(`/seminars`)
+                    : Navigate(`/eventdetails/${value.eventName}`)
+                }
+              >
+                <img
+                  src={value.poster}
+                  className="event-image"
+                  alt={`${value.displayName} Poster`}
+                />
+                <div className="event-overlay">
+                  <h3 className="event-title">{value.displayName}</h3>
+                  <p className="event-subtitle">Click to Learn More</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

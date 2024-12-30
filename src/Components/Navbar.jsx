@@ -77,6 +77,15 @@ function Navbar() {
                   Events
                 </button>
               </li>
+              <li className="nav-item">
+                <button
+                  className="btn navbtn"
+                  onClick={() => navigate("/seminars")}
+                  data-bs-dismiss="offcanvas"
+                >
+                  Seminars
+                </button>
+              </li>
             </ul>
           </div>
         </div>

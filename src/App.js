@@ -7,6 +7,7 @@ import { Toaster } from 'react-hot-toast';
 import Home from './Components/Home';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import Seminar from './Components/Seminars';
 import Footer from './Components/Footer';
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/events" element={<Events />} />
         <Route path="/eventdetails/:eventname" element={<EventDetails />} />
         <Route path="/eventdetails/:eventname/enrollnow" element={<EnrollNow />} />
+        <Route path="/seminars" element={<Seminar />} />
       </Routes>
       <Toaster />
       <Footer/>
