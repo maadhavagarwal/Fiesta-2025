@@ -6,6 +6,7 @@ import AICTClogo from "../Images/AICTC logo.png";
 import nssLogo from "../Images/nssLogo.png";
 import gcLogo from "../Images/gcLogo.png";
 import fiestaLogo from "../Images/fiestaLogo.png";
+import iicMoe from "../Images/iicMoe.png"
 
 function Navbar() {
   const navigate = useNavigate();
@@ -48,13 +49,14 @@ function Navbar() {
               aria-label="Close"
             ></button>
           </div>
-          <div className="offcanvas-body">
+          <div className="offcanvas-body"  style={{alignItems: "center"}}> 
             {/* Logos */}
-            <div className="d-flex justify-content-center flex-wrap gap-2 mb-4">
+            <div className="d-flex justify-content-center flex-wrap gap-2 mb-">
               <img src={iicLogo} alt="IIC Logo" className="logo" />
               <img src={nssLogo} alt="NSS Logo" className="logo" />
               <img src={AICTClogo} alt="AICTC Logo" className="logo" />
               <img src={gcLogo} alt="GC Logo" className="logo" />
+              <img src={iicMoe} alt="iicMoe Logo" className="logo" />
             </div>
 
             {/* Nav Links */}
@@ -77,7 +79,7 @@ function Navbar() {
                   Events
                 </button>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <button
                   className="btn navbtn"
                   onClick={() => navigate("/seminars")}
@@ -85,7 +87,7 @@ function Navbar() {
                 >
                   Seminars
                 </button>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

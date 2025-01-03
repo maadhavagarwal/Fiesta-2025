@@ -58,12 +58,12 @@ export default function EventDetails() {
                 variant="primary"
                 onClick={()=>Navigate(`/eventdetails/${param}/enrollnow`)}
                 className="mb-3 register-btn"
-                style={{borderRadius:"20px"}}
               >
                 Register Participants
               </Button>
                 {true &&
-                <a href={`https://drive.google.com/file/d/`} style={{width:"100%"}}>
+                <a href={eventdata[param].Rule} style={{width:"100%"}}> 
+                {/*  */}
                   <Button variant="secondary" className="rulebook-btn w-100">  
                     {/* <FaBook className="me-2" /> */}
                     Rule Book
@@ -80,7 +80,7 @@ export default function EventDetails() {
           <Modal.Body style={{height:"83%"}}>
             <iframe
               title="Google Drive PDF"
-              src={`https://drive.google.com/file/d/119hiywrd_vKWtiPH-_WHtdFt7-qKsT8w/preview`}
+              src={``}
               style={{width:"100%",height:"100%"}}
               allowFullScreen
             ></iframe>

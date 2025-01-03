@@ -27,7 +27,7 @@ const Footer = () => {
           </div>
         </div>
         
-        <p>&copy; 2024 Your Company</p>
+        {/* <p>&copy; 2025 Fiesta Tpoly</p> */}
       </div>
     </footer>
   );

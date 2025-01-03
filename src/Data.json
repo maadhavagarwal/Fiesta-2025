@@ -2,36 +2,35 @@
     "businessfair":{
         "EventName":"Business Fair",
         "Description":"The Business Fair at Fiesta is a thrilling arena of student-driven innovation, where groundbreaking ideas and entrepreneurial passion converge. It’s a dynamic showcase of creativity and ambition, sparking collaborations and bringing visionary concepts to life. Witness the future unfold!",
-
         "Fee":900,
         "Date":"",
-        "Rule":""
+        "Rule":"https://drive.google.com/file/d/1ZLtdnq_0253xWRQ_bpWb9E9mDMez8EGB/view"
     },
     "sparkstudio":{
         "EventName":"Spark Studio",
         "Description":"Spark Studio, an electrifying event at Fiesta, features the thrilling Shark Tank challenge. Entrepreneurs pitch their ideas to savvy investors, igniting sparks of innovation and potential business venturess",
-        "Fee":486,
+        "Fee":100,
         "Date":"",
-        "Rule":""
+        "Rule":"https://drive.google.com/file/d/1qOCwPJZTp1IIm7duU585zIQv4OE0PAbO/view"
     },
     "ecoquiz":{
         "EventName":"Ecoquiz",
         "Description":"The Eco Quiz is an exciting competition designed to raise awareness about pressing environmental issues like climate change and biodiversity. Test your knowledge, spark curiosity, and get inspired to take action for a sustainable future! ",
-        "Fee":81,
+        "Fee":100,
         "Date":"",
         "Rule":""
     },
     "elocution":{
         "EventName":"Elocution",
         "Description":"The Elocution competition at Fiesta is a high-energy platform where voices rise to inspire, challenge, and captivate. Speakers will command the stage, delivering powerful speeches that spark ideas, ignite passions, and leave a lasting impact. Step up, speak out, and let your words make waves!",
-        "Fee":81,
+        "Fee":100,
         "Date":"",
-        "Rule":""
+        "Rule":"https://drive.google.com/file/d/1GrmDp-13FAEglJMrXBwoAjRKr15mYBVO/view"
     },
     "mmf":{
         "EventName":"Mass&MissFIesta",
         "Description":"Step into the spotlight and unleash your entrepreneurial brilliance at Fiesta’s ultimate business pageant! Compete for the coveted titles of Master and Miss Fiesta by showcasing your innovative ideas and sharp business acumen. Seize your moment to shine and leave a lasting mark!",
-        "Fee":81,
+        "Fee":100,
         "Date":"",
         "Rule":""
     },
@@ -45,16 +44,16 @@
     "miw":{
         "EventName":"Mock Interview Workshop",
         "Description":"Fiesta's mock interviews equip youth to ace challenging interviews through real-world simulations. Build confidence, sharpen communication skills, and gain valuable feedback to excel in high-stakes situations!",
-        "Fee":81,
+        "Fee":100,
         "Date":"",
         "Rule":""
     },
     "ppt":{
-        "EventName":"ppt",
+        "EventName":"Paper presentation case study",
         "Description":"A PPT case study is your gateway to unraveling a real-world mystery! Dive into a gripping narrative packed with challenges, bold analyses, and game-changing solutions, all brought to life through stunning visuals and powerful insights. It's not just a presentation—it's an electrifying journey of discovery and innovation!",
-        "Fee":81,
+        "Fee":100,
         "Date":"",
-        "Rule":""
+        "Rule":"https://drive.google.com/file/d/1JKIm3hBT8_JMhv9mJTwWBgaktDBibckb/view"
     },
     "seminar1":{
         "EventName":"From Idea to Impact – Motivational Session by Successful Entrepreneur/ Start=up Founder",

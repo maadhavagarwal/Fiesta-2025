@@ -15,6 +15,7 @@ import carouselImg5 from "../Images/5.png";
 import carouselImg6 from "../Images/6.png";
 import carouselImg7 from "../Images/3.png";
 import carouselImg8 from "../Images/3.png";
+import TsecLogo from "../Images/TsecLogo.png"
 
 export default function Home() {
   const [carouselActive, setCarouselActive] = useState(false);
@@ -148,6 +149,11 @@ export default function Home() {
             <p>Thakur Polytechnic is accredited by NBA and has received several awards.</p>
           </div>
           <div className="about-us-card">
+            <img src={TsecLogo} alt="Thakur Polytechnic" />
+            <h3>Thakur Shyamnarayan Engineering College</h3>
+            {/* <p>Thakur Polytechnic is accredited by NBA and has received several awards.</p> */}
+          </div>
+          <div className="about-us-card">
             <img src={iicLogo} alt="IIC" />
             <h3>IIC</h3>
             <p>Thakur Polytechnic's Institution Innovation Council (IIC) fosters innovation and entrepreneurship.</p>
@@ -161,6 +167,11 @@ export default function Home() {
             <img src={nssLogo} alt="NSS" />
             <h3>NSS</h3>
             <p>NSS activities at Thakur Polytechnic reflect a commitment to societal well-being and positive change.</p>
+          </div>
+          <div className="about-us-card">
+            {/* <img src={nssLogo} alt="NSS" />
+            <h3>NSS</h3>
+            <p>NSS activities at Thakur Polytechnic reflect a commitment to societal well-being and positive change.</p> */}
           </div>
         </div>
       </section>
