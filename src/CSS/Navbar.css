@@ -1,7 +1,7 @@
 /* General Navbar Styling */
 .navbar {
   background-color: black;
-  padding: 10px 0;
+  padding: 12px 0;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
@@ -10,6 +10,7 @@
   width: 50px;
   height: 50px;
   transition: transform 0.3s ease-in-out;
+  padding-left: 15px;  /* Adding space from the left */
 }
 
 .logo:hover {
@@ -19,13 +20,14 @@
 /* Navbar Button */
 .navbtn {
   background: transparent;
-  color: white;
+  color: rgb(15, 14, 14);
   border: none;
-  padding: 10px 20px;
+  padding: 12px 25px;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
+  margin-right: 15px;  /* Adding spacing between buttons */
 }
 
 .navbtn:hover {
@@ -37,46 +39,51 @@
 .offcanvas-header {
   background-color: #212529;
   color: white;
-  padding: 15px;
+  padding: 20px 25px; /* Increased padding for better spacing */
 }
 
 .offcanvas-body {
   color: white;
-  padding: 20px;
+  padding: 25px 20px; /* More padding for better readability */
+  background-color: #343a40; /* Darker background to improve contrast */
 }
 
 .nav-item button {
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 12px; /* Increased margin between buttons */
   color: aliceblue;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .logo {
-    width: 40px;
-    height: 40px;
+    width: 50px; /* Keeping the previous size for logo */
+    height: 50px;
+    padding-left: 10px;  /* Adjusting padding for smaller screens */
   }
 
   .navbtn {
     font-size: 14px;
-    padding: 8px 15px;
-    color: aliceblue;
+    padding: 10px 18px;
+    color: rgb(7, 8, 8);
+    margin-right: 10px; /* Adjusted spacing */
   }
 
   .offcanvas-body {
-    padding: 15px;
+    padding: 20px 15px;  /* Adjusting padding for smaller screens */
+    background-color: #343a40; /* Maintaining the improved background for contrast */
   }
 }
 
 @media (max-width: 576px) {
   .offcanvas-header {
     font-size: 14px;
-    padding: 10px;
+    padding: 12px 15px; /* Adjusted padding for small screens */
   }
 
   .offcanvas-body {
-    padding: 10px;
-    color:aliceblue
+    padding: 12px 10px; /* Adjusted padding for smaller devices */
+    color: rgb(13, 13, 14);
+    background-color: #343a40; /* Maintaining contrast for readability */
   }
 }

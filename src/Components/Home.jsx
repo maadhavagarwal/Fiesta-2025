@@ -7,32 +7,51 @@ import iicLogo from "../Images/IIC logo.png"; // IIC logo
 import tpolyL from "../Images/tpolyLogo.png"; // Thakur Polytechnic logo
 import nssLogo from "../Images/nssLogo.png"; // NSS logo
 import gcLogo from "../Images/gcLogo.png"; // Green Club logo
-import carouselImg1 from "../Images/s1.png"; // Add the actual image paths
-import carouselImg2 from "../Images/s2.png";
-import carouselImg3 from "../Images/s3.png";
-import carouselImg4 from "../Images/s4.png";
-import carouselImg5 from "../Images/5.png";
-import carouselImg6 from "../Images/6.png";
-import carouselImg7 from "../Images/3.png";
-import carouselImg8 from "../Images/3.png";
+
+
 import TsecLogo from "../Images/TsecLogo.png"
 
 export default function Home() {
   const [carouselActive, setCarouselActive] = useState(false);
   const [cardsVisible, setCardsVisible] = useState(false);
-  const carouselRef = useRef(null);
+  // const carouselRef = useRef(null);
   const cardsRef = useRef(null); // Reference for the About Us cards section
 
+  const carouselRef = useRef(null);
+
   const images = [
-    carouselImg1,
-    carouselImg2,
-    carouselImg3,
-    carouselImg4,
-    carouselImg5,
-    carouselImg6,
-    carouselImg7,
-    carouselImg8
+    "s1.png",
+    "s2.png",
+    "s3.png",
+    "s4.png",
+    "s5.png",
+    "s6.png",
   ];
+
+  const duplicatedImages = [...images, ...images]; // Duplicate the images
+
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    let scrollInterval;
+
+    const startScroll = () => {
+      scrollInterval = setInterval(() => {
+        if (carousel.scrollLeft >= carousel.scrollWidth / 2) {
+          // Reset scroll to the start of the original images
+          carousel.scrollLeft = 0;
+        } else {
+          carousel.scrollLeft += 1; // Increment scroll position
+        }
+      }, 20); // Adjust speed as needed
+    };
+
+    startScroll();
+
+    // Cleanup on component unmount
+    return () => {
+      clearInterval(scrollInterval);
+    };
+  }, []);
 
   const navigate = useNavigate();
 
@@ -127,13 +146,21 @@ export default function Home() {
       </section>
 
       {/* Carousel Section for Last Year's Images */}
+      <h2>Last Year's Highlights</h2>
       <section className="carousel-section" ref={carouselRef}>
-        <h2>Last Year's Highlights</h2>
-        <div className={`carousel ${carouselActive ? "active" : ""}`}>
-          {images.map((image, index) => (
-            <img key={index} src={image} alt={`Fiesta 2024 - Image ${index + 1}`} className="carousel-image" />
-          ))}
-        </div>
+        {/* <h2>Last Year's Highlights</h2> */}
+        <div className="carousel-container">
+      <div className="carousel" ref={carouselRef}>
+        {duplicatedImages.map((image, index) => (
+          <img
+            key={index}
+            src={require(`../Images/${image}`)} // Adjust the path if necessary
+            alt={`Image ${index + 1}`}
+            className="carousel-image"
+          />
+        ))}
+      </div>
+    </div>
       </section>
 
       {/* About Us Section with Animation */}

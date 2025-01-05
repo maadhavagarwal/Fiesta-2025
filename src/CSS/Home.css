@@ -57,29 +57,29 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  max-height: 600px; /* Reduced height for the carousel */
+  max-height: 800px; /* Reduced height for the carousel */
 }
 
 .carousel {
   display: flex;
-  animation: scrollCarousel 20s linear infinite;
+  animation: scrollCarousel 60s linear infinite;
 }
 
 .carousel-image {
-  width: 20%; /* Reduced width for smaller carousel images */
-  height: 100%;
-  object-fit: cover; /* Ensure images are cropped to fit the container */
-  margin: 0 10px;
+  width: 40%;
+  /* object-fit: ; */
+  height: 30%;
 }
 
 @keyframes scrollCarousel {
   0% {
-    transform: translateX(10);
+    transform: translateX(0);
   }
   100% {
     transform: translateX(-100%);
   }
 }
+
 
 /* About Us Section Styling */
 .about-us {
@@ -147,6 +147,9 @@
 /* Responsive Design for Small Screens (Tablets, Mobiles) */
 @media (max-width: 768px) {
   /* About Us Cards: 2 cards per row on smaller screens */
+  .carousel-image{
+    height: 50px;
+  }
   .about-us-cards {
     grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
   }
