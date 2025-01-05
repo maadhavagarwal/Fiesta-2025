@@ -6,13 +6,13 @@ import AICTClogo from "../Images/AICTC logo.png";
 import nssLogo from "../Images/nssLogo.png";
 import gcLogo from "../Images/gcLogo.png";
 import fiestaLogo from "../Images/fiestaLogo.png";
-import iicMoe from "../Images/iicMoe.png"
+import iicMoe from "../Images/iicMoe.png";
 
 function Navbar() {
   const navigate = useNavigate();
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-black">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
       <div className="container-fluid">
         {/* Brand Logo */}
         <Link className="navbar-brand d-flex align-items-center" to="/">
@@ -49,7 +49,7 @@ function Navbar() {
               aria-label="Close"
             ></button>
           </div>
-          <div className="offcanvas-body"  style={{alignItems: "center"}}> 
+          <div className="offcanvas-body" style={{ alignItems: "center" }}>
             {/* Logos */}
             <div className="d-flex justify-content-center flex-wrap gap-2 mb-">
               <img src={iicLogo} alt="IIC Logo" className="logo" />

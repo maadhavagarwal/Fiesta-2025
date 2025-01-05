@@ -10,11 +10,13 @@ const Footer = () => {
           <div className="contact-info">
             <h4>Contact Persons</h4>
             <ul>
-              <li>John Doe - +1234567890</li>
-              <li>Jane Smith - +0987654321</li>
-              <li>Michael Brown - +1122334455</li>
-              <li>Emily Johnson - +2233445566</li>
-              <li>David Wilson - +3344556677</li>
+              <li>Dhanesh Shetty +91 8591604650</li>
+              <li>Ritesh Upadhyay +91 77100 72532</li>
+              <li>Gargi Surse +91 70410 76454</li>
+              <li>Kaustubh Shinde +91 91368 64492</li>
+              <li>Khushi Chauhan +91 91522 09326</li>
+              <li>Parth Rane +91 90829 13961</li>
+
             </ul>
           </div>
 
