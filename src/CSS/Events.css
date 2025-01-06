@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  margin-top: 90px;
 }
 
 body {
@@ -13,6 +14,7 @@ body {
 .outer {
   padding: 40px 20px;
   perspective: 1000px; /* Enables 3D perspective */
+  margin-top: 90px;
 }
 
 /* Outer Card for 3D Effect */
@@ -115,7 +117,7 @@ body {
 /* Responsive Design */
 @media (max-width: 992px) {
   .card-container {
-    width: 16rem;
+    width: 26rem;
     height: 22rem;
   }
 }
@@ -131,4 +133,35 @@ body {
   .outer {
     padding: 20px;
   }
+  event-image{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    margin-right: 50PX;
+  }
+  .card-container {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+  .event-overlay {
+    padding: 10px;
+  }
+  .event-title {
+    font-size: 1rem;
+  }
+  .event-subtitle {
+    font-size: 0.8rem;
+}
+
+@media (max-width: 576px) {
+  .outer {
+    padding: 20px;
+  }
+  event-image{
+    width: 100%;
+    height: auto;
+    margin-right: 100px  ;
+  }
+}
 }

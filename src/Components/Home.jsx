@@ -195,12 +195,7 @@ export default function Home() {
             <h3>NSS</h3>
             <p>NSS activities at Thakur Polytechnic reflect a commitment to societal well-being and positive change.</p>
           </div>
-          <div className="about-us-card">
-            {/* <img src={nssLogo} alt="NSS" />
-            <h3>NSS</h3>
-            <p>NSS activities at Thakur Polytechnic reflect a commitment to societal well-being and positive change.</p> */}
-          </div>
-        </div>
+              </div>
       </section>
     </div>
   );
