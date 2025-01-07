@@ -125,6 +125,7 @@
 
 .about-us-card:hover {
   transform: translateY(-10px);
+  cursor: pointer;
 }
 
 .about-us-card img {
@@ -148,7 +149,7 @@
 @media (max-width: 768px) {
   /* About Us Cards: 2 cards per row on smaller screens */
   .carousel-image{
-    height: 50px;
+    height: 100px;
   }
   .about-us-cards {
     grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
@@ -242,5 +243,8 @@
   /* Insight Cards: 1 card per row on smaller screens */
   .insight-cards-container {
     grid-template-columns: 1fr; /* 1 card per row */
+  }
+  .insight-card {
+    width: 90%;
   }
 }

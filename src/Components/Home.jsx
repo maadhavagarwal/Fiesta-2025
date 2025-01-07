@@ -7,9 +7,9 @@ import iicLogo from "../Images/IIC logo.png"; // IIC logo
 import tpolyL from "../Images/tpolyLogo.png"; // Thakur Polytechnic logo
 import nssLogo from "../Images/nssLogo.png"; // NSS logo
 import gcLogo from "../Images/gcLogo.png"; // Green Club logo
-
-
 import TsecLogo from "../Images/TsecLogo.png"
+
+
 
 export default function Home() {
   const [carouselActive, setCarouselActive] = useState(false);
@@ -127,8 +127,8 @@ export default function Home() {
       </section>
 
       {/* Last Year's Insights Section */}
-      <section className="insights">
-        <h2>Last Year's Insights</h2>
+      <section className="insights my-2">
+        <h2 className="text-center">Last Year's Insights</h2>
         <div className="insight-cards">
           <div className="insight-card">
             <h3>Events Hosted</h3>
@@ -146,7 +146,7 @@ export default function Home() {
       </section>
 
       {/* Carousel Section for Last Year's Images */}
-      <h2>Last Year's Highlights</h2>
+      <h2 className="text-center my-2">Last Year's Highlights</h2>
       <section className="carousel-section" ref={carouselRef}>
         {/* <h2>Last Year's Highlights</h2> */}
         <div className="carousel-container">

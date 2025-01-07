@@ -46,6 +46,7 @@
   color: white;
   padding: 25px 20px; /* More padding for better readability */
   background-color: #343a40; /* Darker background to improve contrast */
+  border-radius: 15px;
 }
 
 .nav-item button {

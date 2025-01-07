@@ -8,7 +8,7 @@ import SE from "../Images/5.png";
 import mmf from "../Images/13.png";
 import ppt from "../Images/14.png";
 import miw from "../Images/12.png";
-import flogo from "../Images/fiestaLogo.png";
+// import flogo from "../Images/fiestaLogo.png";
 import { useNavigate } from "react-router-dom";
 
 export default function Events() {

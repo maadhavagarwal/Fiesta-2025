@@ -14,7 +14,7 @@ body {
 .outer {
   padding: 40px 20px;
   perspective: 1000px; /* Enables 3D perspective */
-  margin-top: 90px;
+  margin-top: 30px;
 }
 
 /* Outer Card for 3D Effect */

@@ -5,11 +5,11 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
+            <h4>Contact Persons</h4>
         <div className="footer-content">
           {/* Contact Information Section (Left) */}
           <div className="contact-info">
-            <h4>Contact Persons</h4>
-            <ul>
+            <ul className='text-start'>
               <li>Dhanesh Shetty +91 8591604650</li>
               <li>Ritesh Upadhyay +91 77100 72532</li>
               <li>Gargi Surse +91 70410 76454</li>
@@ -21,7 +21,7 @@ const Footer = () => {
           </div>
 
           {/* Social Icons Section (Right) */}
-          <div className="social-icons">
+          <div className="social-icons text-start">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon">Facebook</a>
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-icon">Twitter</a>
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon">LinkedIn</a>

@@ -12,11 +12,11 @@ function Navbar() {
   const navigate = useNavigate();
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-black mb-3">
       <div className="container-fluid">
         {/* Brand Logo */}
         <Link className="navbar-brand d-flex align-items-center" to="/">
-          <img src={fiestaLogo} alt="Fiesta Logo" className="logo me-2" />
+          <img src={fiestaLogo} alt="Fiesta Logo" className="logo me-2" style={{height: "50px",width: "75px"}} />
           <span>Fiesta</span>
         </Link>
 
@@ -52,7 +52,7 @@ function Navbar() {
           <div className="offcanvas-body" style={{ alignItems: "center" }}>
             {/* Logos */}
             <div className="d-flex justify-content-center flex-wrap gap-2 mb-">
-              <img src={iicLogo} alt="IIC Logo" className="logo" />
+              <img src={iicLogo} alt="IIC Logo" className="logo"  />
               <img src={nssLogo} alt="NSS Logo" className="logo" />
               <img src={AICTClogo} alt="AICTC Logo" className="logo" />
               <img src={gcLogo} alt="GC Logo" className="logo" />

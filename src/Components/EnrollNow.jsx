@@ -22,6 +22,16 @@ const eventAPIs = {
   seminar5: "https://sheetdb.io/api/v1/6v3c5qrc7avqj",
   seminar6: "https://sheetdb.io/api/v1/62j1lgbc8m4us",
 };
+const photoAPIs = {
+  businessfair: "https://script.google.com/macros/s/AKfycbxQiXHJs-XxEFLyYq3orTYTsGbyAI-a9LBfz07vWliX03hTPzb3H9J3GzvmsAjUEtwT/exec",
+  sparkstudio: "https://script.google.com/macros/s/AKfycbyGQ-gT_EsMroe3nOk5GaxZtqExZPHQ86ulOc1MG24iZUCICuDMOLp80KZ7c2jGvVSU/exec",
+  ecoquiz: "https://script.google.com/macros/s/AKfycbzd-kIiLsfkDxpcXsG4yPDbSTdd-ppgVG4PDQ_d__kfXuYmapCg87t5m_SHjXiRUf9v/exec",
+  miw: "https://script.google.com/macros/s/AKfycbwUdefKRC6fq4CopnRkGkOD2Ee7O1KmqRJaN15ybIHYFJEhRTpSLSeYAJFjQf462Iok/exec",
+  ppt: "https://script.google.com/macros/s/AKfycbyKKnrDkcFaCi9BVv0gR5Iygho1M-Zr196JKMYNa3M_kmN4GANUMlpog9zUdkHXIkW4/exec",
+  elocution: "https://script.google.com/macros/s/AKfycbwaHOOl_waFfQjTtxvmX6_vMCR2oUoej3m2rn42r7j8gXhVzARYxzRyF4Og12UmkJUh/exec",
+  mastermissfiesta: "https://script.google.com/macros/s/AKfycbxjgFpj0gPWg1P9jhGcuktzVyRSCXx8iOLEW22vJughUY2O0tau45H2O0CJA67z4OMk/exec",
+ 
+};
 
 const perPersonPrice = {
   sparkstudio: 100,
@@ -30,10 +40,10 @@ const perPersonPrice = {
 };
 
 const fixedPaymentAmount = {
-  elocution: 100,
-  ecoquiz: 100,
-  mastermissfiesta: 100,
-  miw: 100,
+  elocution: 1,
+  ecoquiz: 1,
+  mastermissfiesta: 1,
+  miw: 1,
   businessfair: 911.00,
   seminar1: 0,
   seminar2: 0,
@@ -105,6 +115,20 @@ export default function ParticipantForm() {
     setParticipants(participantArray);
     calculateTotalPrice(participantArray);
   };
+  const guardarArchivo = (e) =>{
+    var file = e.target.files[0] //the file
+    performOCR(file);
+    var reader = new FileReader() //this for convert to Base64 
+    reader.readAsDataURL(e.target.files[0]) //start conversion...
+    reader.onload = function (e) { //.. once finished..
+      var rawLog = reader.result.split(',')[1]; //extract only thee file data part
+      var dataSend = { dataReq: { data: rawLog, name: file.name, type: file.type }, fname: "uploadFilesToGoogleDrive" }; //preapre info to send to API
+      fetch(photoAPIs[eventname], //your AppsScript URL
+        { method: "POST", body: JSON.stringify(dataSend) }) //send to Api
+        .then(res => res.json()).then((a) => {
+          console.log(a) //See response
+        }).catch(e => console.log(e)) // Or Error in console
+    }}
 
   const fetchTakenStalls = async () => {
     try {
@@ -132,7 +156,7 @@ export default function ParticipantForm() {
   };
 
   const handlePaymentConfirmation = () => {
-    if (!transactionId.trim() || !paymentImage) {
+    if (!transactionId.trim() ) {
       toast.error("Please complete payment details.");
       return;
     }
@@ -153,13 +177,45 @@ export default function ParticipantForm() {
     }
   };
 
-  const handleImageUpload = (event) => {
+  const handleImageUpload = async (event) => {
     const file = event.target.files[0];
-    if (file) {
-      setPaymentImage(URL.createObjectURL(file));
-      performOCR(file);
+    if (!file) {
+      toast.error("No file selected.");
+      return;
     }
+  
+    setPaymentImage(URL.createObjectURL(file)); // Preview the image
+    performOCR(file); // Optional OCR processing
+  
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = async () => {
+      try {
+        const rawLog = reader.result.split(',')[1];
+        const dataSend = {
+          dataReq: { data: rawLog, name: file.name, type: file.type },
+          fname: "uploadFilesToGoogleDrive",
+        };
+  
+        const response = await fetch(photoAPIs[eventname], {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(dataSend),
+        });
+  
+        const result = await response.json();
+        console.log(result); // Handle the response
+      } catch (error) {
+        console.error("Error uploading file:", error);
+        toast.error("File upload failed.");
+      }
+    };
+  
+    reader.onerror = () => {
+      toast.error("Error reading file.");
+    };
   };
+  
 
   const performOCR = (file) => {
     Tesseract.recognize(
@@ -205,10 +261,10 @@ export default function ParticipantForm() {
       return;
     }
 
-    if (!isPaymentDone || !isOcrVerified) {
-      toast.error("Please confirm and verify the payment before submitting.");
-      return;
-    }
+    // if (!isPaymentDone || !isOcrVerified) {
+    //   toast.error("Please confirm and verify the payment before submitting.");
+    //   return;
+    // }
 
     if (participants.some((p) => Object.values(p).some((v) => !v))) {
       toast.error("Please fill out all fields for all participants.");
@@ -272,7 +328,7 @@ export default function ParticipantForm() {
   };
 
   return (
-    <div className="participant-form">
+    <div className="participant-form container mt-5">
       <h2>{eventname === "businessfair" ? "Business Fair" : "Event"} Registration</h2>
 
       <Form>
@@ -415,7 +471,7 @@ export default function ParticipantForm() {
           <Form.Label>Upload Payment Proof</Form.Label>
           <Form.Control
             type="file"
-            onChange={handleImageUpload}
+            onChange={guardarArchivo}
           />
         </Form.Group>
         <div className="qr-code-section">
