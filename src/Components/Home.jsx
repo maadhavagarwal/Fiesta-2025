@@ -20,12 +20,12 @@ export default function Home() {
   const carouselRef = useRef(null);
 
   const images = [
-    "s1.png",
-    "s2.png",
-    "s3.png",
-    "s4.png",
-    "s5.png",
-    "s6.png",
+    "s1.jpg",
+    "s2.jpg",
+    "s3.jpg",
+    "s4.jpg",
+    "s5.jpg",
+    "s6.jpg",
   ];
 
   const duplicatedImages = [...images, ...images]; // Duplicate the images

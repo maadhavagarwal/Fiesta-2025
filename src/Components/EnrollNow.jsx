@@ -40,10 +40,10 @@ const perPersonPrice = {
 };
 
 const fixedPaymentAmount = {
-  elocution: 1,
-  ecoquiz: 1,
-  mastermissfiesta: 1,
-  miw: 1,
+  elocution: 100,
+  ecoquiz: 100,
+  mastermissfiesta: 100,
+  miw: 100,
   businessfair: 911.00,
   seminar1: 0,
   seminar2: 0,

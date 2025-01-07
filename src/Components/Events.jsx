@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import "../CSS/Events.css";
-import Bf from "../Images/1.png";
-import EQ from "../Images/2.png";
-import SS from "../Images/4.png";
-import EL from "../Images/3.png";
-import SE from "../Images/5.png";
-import mmf from "../Images/13.png";
-import ppt from "../Images/14.png";
-import miw from "../Images/12.png";
+import Bf from "../Images/1.jpg";
+import EQ from "../Images/2.jpg";
+import SS from "../Images/4.jpg";
+import EL from "../Images/3.jpg";
+import SE from "../Images/5.jpg";
+import mmf from "../Images/13.jpg";
+import ppt from "../Images/14.jpg";
+import miw from "../Images/12.jpg";
 // import flogo from "../Images/fiestaLogo.png";
 import { useNavigate } from "react-router-dom";
 
