@@ -266,10 +266,10 @@ export default function ParticipantForm() {
     //   return;
     // }
 
-    if (participants.some((p) => Object.values(p).some((v) => !v))) {
-      toast.error("Please fill out all fields for all participants.");
-      return;
-    }
+    // if (participants.some((p) => Object.values(p).some((v) => !v))) {
+    //   toast.error("Please fill out all fields for all participants.");
+    //   return;
+    // }
 
     if (eventname === "businessfair") {
       if (!stallType) {
@@ -287,7 +287,12 @@ export default function ParticipantForm() {
         return;
       }
     }
-
+if (eventname === "seminar1" || eventname === "seminar2" || eventname === "seminar3" || eventname === "seminar3" || eventname === "seminar4" || eventname === "seminar5" || eventname === "seminar6"){
+  setIsPaymentDone(true);
+  setIsOcrVerified(true);
+  setTransactionId(0);
+  setPaymentImage("")
+}
     const data = {
       groupId: Date.now().toString(),
       groupName,
@@ -428,6 +433,15 @@ export default function ParticipantForm() {
               />
             </Form.Group>
             <Form.Group>
+              {eventname === "mastermissfiesta" || eventname === "mastermissfiesta" || eventname === "seminar1" || eventname === "seminar2" || eventname === "seminar3" || eventname === "seminar3" || eventname === "seminar4" || eventname === "seminar5" || eventname === "seminar6"?<>
+                <Form.Label>College Name</Form.Label>
+              <Form.Control
+                type="Fixed"
+         
+                value="Thakur Polytechnic"
+                onChange={(e) => handleInputChange(index, "collegeName", e.target.value)}
+              />
+              </>:<>
               <Form.Label>College Name</Form.Label>
               <Form.Control
                 type="text"
@@ -435,6 +449,8 @@ export default function ParticipantForm() {
                 value={participant.collegeName}
                 onChange={(e) => handleInputChange(index, "collegeName", e.target.value)}
               />
+              </>}
+              
             </Form.Group>
             <Form.Group>
               <Form.Label>Year</Form.Label>
@@ -446,16 +462,116 @@ export default function ParticipantForm() {
               />
             </Form.Group>
             <Form.Group>
-              <Form.Label>Branch</Form.Label>
+              {eventname === "seminar1" && (
+                <>
+                <Form.Label>Branch</Form.Label>
+                <Form.Control
+                  type="Fixed"
+                  placeholder="Enter branch"
+                  value="Computer Engineering"
+                  onChange={(e) => handleInputChange(index, "branch", e.target.value)}
+                />
+                </>
+              )}
+              {eventname === "seminar2" && (
+                <>
+                <Form.Label>Branch</Form.Label>
+                <Form.Control
+                  type="Fixed"
+          
+                  value="Mechanical Engineering"
+                  onChange={(e) => handleInputChange(index, "branch", e.target.value)}
+                />
+                </>
+              )}
+              {eventname === "seminar3" && (
+                <>
+                <Form.Label>Branch</Form.Label>
+                <Form.Control
+                  type="Fixed"
+              
+                  value="Electronics & Telecommunication"
+                  onChange={(e) => handleInputChange(index, "branch", e.target.value)}
+                />
+                </>
+              )}
+              {eventname === "seminar4" && (
+                <>
+                <Form.Label>Branch</Form.Label>
+                <Form.Control
+                  type="Fixed"
+                
+                  value="Mechanical Engineering"
+                  onChange={(e) => handleInputChange(index, "branch", e.target.value)}
+                />
+                </>
+              )}
+               {eventname === "seminar5" && (
+                <>
+                <Form.Label>Branch</Form.Label>
+                <Form.Control
+                  type="Fixed"
+                
+                  value="Civil Engineering"
+                  onChange={(e) => handleInputChange(index, "branch", e.target.value)}
+                />
+                </>
+              )}
+               {eventname === "seminar6" && (
+                <>
+                <Form.Label>Branch</Form.Label>
+                <Form.Control
+                  type="Fixed"
+                
+                  value="TSEC"
+                  onChange={(e) => handleInputChange(index, "branch", e.target.value)}
+                />
+                </>
+              )}
+              
+            </Form.Group>
+            {/* <Form.Group>
+              <Form.Label>Phone Number</Form.Label>
               <Form.Control
+              <Form.Label>Branch</Form.Label>
+              <Form.Control 
+              
                 type="text"
                 placeholder="Enter branch"
                 value={participant.branch}
                 onChange={(e) => handleInputChange(index, "branch", e.target.value)}
               />
-            </Form.Group>
+            </Form.Group> */}
           </div>
         ))}
+        {eventname === "seminar1" || eventname === "seminar2" || eventname === "seminar3" || eventname === "seminar3" || eventname === "seminar4" || eventname === "seminar5" || eventname === "seminar6"?
+        <>
+        <Form.Group>
+          
+          <Form.Label>Payable amount </Form.Label>
+          <Form.Control
+            type="Fixed"
+            value={totalPrice}
+            // onChange={(e) => setTransactionId(e.target.value)}
+            placeholder="Enter transaction ID"
+          />
+        </Form.Group>
+          <Button variant="success" onClick={handleSubmit}>
+            Submit Registration
+          </Button>
+   </>
+          :
+          <>
+ <Form.Group>
+          
+          <Form.Label>Payable amount </Form.Label>
+          <Form.Control
+            type="Fixed"
+            value={totalPrice}
+            // onChange={(e) => setTransactionId(e.target.value)}
+            placeholder="Enter transaction ID"
+          />
+        </Form.Group>
 
         <Form.Group>
           <Form.Label>Transaction ID</Form.Label>
@@ -487,7 +603,11 @@ export default function ParticipantForm() {
             Submit Registration
           </Button>
         )}
+          </>
+}
+       
       </Form>
     </div>
   );
 }
+//if it is semnar so no payment option and  according to seminar put a fix branch name on branch section also put fix thakur Polytechnic fix in mass & miss fiesta ,seminars  

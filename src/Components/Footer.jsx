@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
-            <h4>Contact Persons</h4>
+            <h4>Contact Us</h4>
         <div className="footer-content">
           {/* Contact Information Section (Left) */}
           <div className="contact-info">
@@ -15,7 +15,7 @@ const Footer = () => {
               <li>Gargi Surse +91 70410 76454</li>
               <li>Kaustubh Shinde +91 91368 64492</li>
               <li>Khushi Chauhan +91 91522 09326</li>
-              <li>Parth Rane +91 90829 13961</li>
+              <li>Parth Rane (Faculty) +91 90829 13961</li>
 
             </ul>
           </div>

@@ -7,7 +7,10 @@ import nssLogo from "../Images/nssLogo.png";
 import gcLogo from "../Images/gcLogo.png";
 import fiestaLogo from "../Images/fiestaLogo.png";
 import iicMoe from "../Images/iicMoe.png";
-
+import TsecLogo from "../Images/TsecLogo.png";
+import Moe from "../Images/moe_innovation.jpeg"
+import tpolyL from "../Images/tpolyLogo.png"; // 
+import MoeI from "../Images/moe_innovation.jpeg"
 function Navbar() {
   const navigate = useNavigate();
 
@@ -19,6 +22,8 @@ function Navbar() {
           <img src={fiestaLogo} alt="Fiesta Logo" className="logo me-2" style={{height: "50px",width: "75px"}} />
           <span>Fiesta</span>
         </Link>
+<img src={tpolyL} alt="TPO Logo" className="logo me-2" style={{height: "50px",width: "75px"}} />
+{/* <img src={TsecLogo} alt="TPO Logo" className="logo me-2" style={{height: "50px",width: "75px"}} /> */}
 
         {/* Toggler */}
         <button
@@ -57,6 +62,8 @@ function Navbar() {
               <img src={AICTClogo} alt="AICTC Logo" className="logo" />
               <img src={gcLogo} alt="GC Logo" className="logo" />
               <img src={iicMoe} alt="iicMoe Logo" className="logo" />
+              <img src={Moe} alt="iicMoe Logo" className="logo" />
+              <img src={MoeI} alt="iicMoe Logo" className="logo" />
             </div>
 
             {/* Nav Links */}

@@ -14,6 +14,13 @@ import TsecLogo from "../Images/TsecLogo.png"
 export default function Home() {
   const [carouselActive, setCarouselActive] = useState(false);
   const [cardsVisible, setCardsVisible] = useState(false);
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setVideoLoaded(true);
+    }, 1000); // Adjust delay as needed
+    return () => clearTimeout(timer);
+  }, []);
   // const carouselRef = useRef(null);
   const cardsRef = useRef(null); // Reference for the About Us cards section
 
@@ -105,15 +112,13 @@ export default function Home() {
     <div>
       {/* Hero Section with Video Only */}
       <div className="hero-section">
-        <video
-          className="hero-video"
-          autoPlay
-          loop
-          muted
-        >
-          <source src={videoFile} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+      {!videoLoaded && <img src="path/to/fallback-image.jpg" alt="Fallback" className="hero-placeholder" />}
+    {videoLoaded && (
+      <video className="hero-video" autoPlay loop muted preload="auto">
+        <source src={videoFile} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    )}
       </div>
 
       {/* Introduction Section */}
@@ -132,16 +137,13 @@ export default function Home() {
         <div className="insight-cards">
           <div className="insight-card">
             <h3>Events Hosted</h3>
-            <p>25+ events were organized, fostering innovation and learning.</p>
+            <p>10+ events were organized, fostering innovation and learning.</p>
           </div>
           <div className="insight-card">
             <h3>Participants</h3>
-            <p>Over 10,000 participants joined us last year.</p>
+            <p>Over 4,000 participants joined us last year.</p>
           </div>
-          <div className="insight-card">
-            <h3>Achievements</h3>
-            <p>National awards and recognitions for groundbreaking projects.</p>
-          </div>
+          
         </div>
       </section>
 

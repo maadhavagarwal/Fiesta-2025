@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom"; // Import Link component
 import "../CSS/Events.css";
 import Bf from "../Images/1.jpg";
 import EQ from "../Images/2.jpg";
@@ -8,54 +9,19 @@ import SE from "../Images/5.jpg";
 import mmf from "../Images/13.jpg";
 import ppt from "../Images/14.jpg";
 import miw from "../Images/12.jpg";
-// import flogo from "../Images/fiestaLogo.png";
-import { useNavigate } from "react-router-dom";
 
 export default function Events() {
-  const Navigate = useNavigate();
   const [cardStyle, setCardStyle] = useState({});
 
   const events = [
-    {
-      eventName: "businessfair",
-      poster: Bf,
-      displayName: "Business Fair",
-    },
-    {
-      eventName: "sparkstudio",
-      poster: SS,
-      displayName: "Spark Studio",
-    },
-    {
-      eventName: "elocution",
-      poster: EL,
-      displayName: "Elocution",
-    },
-    {
-      eventName: "miw",
-      poster: miw,
-      displayName: "Mock Interview Workshop",
-    },
-    {
-      eventName: "mmf",
-      poster: mmf,
-      displayName: "Master & Miss Fiesta",
-    },
-    {
-      eventName: "ecoquiz",
-      poster: EQ,
-      displayName: "Eco Quiz",
-    },
-    {
-      eventName: "ppt",
-      poster: ppt,
-      displayName: "PPT Case Study",
-    },
-    {
-      eventName: "seminars",
-      poster: SE,
-      displayName: "Seminars",
-    },
+    { eventName: "businessfair", poster: Bf, displayName: "Business Fair" },
+    { eventName: "sparkstudio", poster: SS, displayName: "Spark Studio" },
+    { eventName: "elocution", poster: EL, displayName: "Elocution" },
+    { eventName: "miw", poster: miw, displayName: "Mock Interview Workshop" },
+    { eventName: "mmf", poster: mmf, displayName: "Master & Miss Fiesta" },
+    { eventName: "ecoquiz", poster: EQ, displayName: "Eco Quiz" },
+    { eventName: "ppt", poster: ppt, displayName: "PPT Case Study" },
+    { eventName: "seminar", poster: SE, displayName: "Seminars" },
   ];
 
   const handleMouseMove = (e) => {
@@ -64,7 +30,7 @@ export default function Events() {
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    const xRot = ((y / rect.height) - 0.5) * -20; // Tilt effect
+    const xRot = ((y / rect.height) - 0.5) * -20;
     const yRot = ((x / rect.width) - 0.5) * 20;
 
     setCardStyle({
@@ -93,24 +59,22 @@ export default function Events() {
                 key={index}
                 className="col-lg-3 col-md-4 col-sm-6 col-12 d-flex justify-content-center mb-4"
               >
-                <div
-                  className="card-container"
-                  onClick={() =>
-                    value.eventName === "seminars"
-                      ? Navigate(`/seminars`)
-                      : Navigate(`/eventdetails/${value.eventName}`)
-                  }
+                <Link
+                  to={value.eventName === "seminar" ? "/seminars" : `/eventdetails/${value.eventName}`}
+                  className="card-link"
                 >
-                  <img
-                    src={value.poster}
-                    className="event-image"
-                    alt={`${value.displayName} Poster`}
-                  />
-                  <div className="event-overlay">
-                    <h3 className="event-title">{value.displayName}</h3>
-                    <p className="event-subtitle">Click to Learn More</p>
+                  <div className="card-container">
+                    <img
+                      src={value.poster}
+                      className="event-image"
+                      alt={`${value.displayName} Poster`}
+                    />
+                    <div className="event-overlay">
+                      <h3 className="event-title">{value.displayName}</h3>
+                      <p className="event-subtitle">Click to Learn More</p>
+                    </div>
                   </div>
-                </div>
+                </Link>
               </div>
             ))}
           </div>
