@@ -35,8 +35,8 @@ const photoAPIs = {
 
 const perPersonPrice = {
   sparkstudio: 100,
-  ppt: 81,
-  mystery: 81,
+  ppt: 100,
+  // mystery: 81,
 };
 
 const fixedPaymentAmount = {
@@ -243,17 +243,57 @@ export default function ParticipantForm() {
   };
 
   const calculateTotalPrice = (updatedParticipants = participants) => {
-    const filledCount = updatedParticipants.filter(
-      (p) =>
-        p.name && p.email && p.phone && p.age && p.collegeName && p.year && p.branch
-    ).length;
-
+    // Debugging: Log the updated participants
+    // console.log("Updated Participants Array: ", updatedParticipants);
+  
+    // Count participants with all required fields filled
+    const filledCount = updatedParticipants.filter((p) => {
+      // Check each field individually and log the result
+      const nameFilled = p.name?.trim();
+      const emailFilled = p.email?.trim();
+      const phoneFilled = p.phone?.trim();
+      const ageFilled = p.age?.trim();
+      const collegeNameFilled = p.collegeName?.trim();
+      const yearFilled = p.year?.trim();
+      const branchFilled = p.branch?.trim();
+    
+      console.log('Participant:', p);
+      console.log('Name Filled:', nameFilled);
+      console.log('Email Filled:', emailFilled);
+      console.log('Phone Filled:', phoneFilled);
+      console.log('Age Filled:', ageFilled);
+      console.log('College Name Filled:', collegeNameFilled);
+      console.log('Year Filled:', yearFilled);
+      console.log('Branch Filled:', branchFilled);
+    
+      const isFilled =
+        nameFilled && emailFilled && phoneFilled && ageFilled && collegeNameFilled && yearFilled && branchFilled;
+    
+      console.log('Is Filled:', isFilled); // Check the final result of the condition
+    
+      return isFilled;
+    }).length;
+    
+    console.log('Filled count:', filledCount);
+        
+    
+    // console.log('Filled count:',); // Log the final count
+    
+    // // Debugging: Log the filled count
+    // console.log("Filled Count: ", filledCount);
+  
+    // Calculate total price based on fixed or per-person pricing
     if (fixedPaymentAmount[eventname]) {
       setTotalPrice(fixedPaymentAmount[eventname]);
     } else if (perPersonPrice[eventname]) {
       setTotalPrice(filledCount * perPersonPrice[eventname]);
     }
   };
+  
+  useEffect(() => {
+    calculateTotalPrice(participants);
+  }, [participants]); // Recalculate price when participants change
+  
 
   const handleSubmit = async () => {
     if (!groupName.trim()) {
@@ -462,74 +502,69 @@ if (eventname === "seminar1" || eventname === "seminar2" || eventname === "semin
               />
             </Form.Group>
             <Form.Group>
-              {eventname === "seminar1" && (
-                <>
-                <Form.Label>Branch</Form.Label>
-                <Form.Control
-                  type="Fixed"
-                  placeholder="Enter branch"
-                  value="Computer Engineering"
-                  onChange={(e) => handleInputChange(index, "branch", e.target.value)}
-                />
-                </>
-              )}
-              {eventname === "seminar2" && (
-                <>
-                <Form.Label>Branch</Form.Label>
-                <Form.Control
-                  type="Fixed"
-          
-                  value="Mechanical Engineering"
-                  onChange={(e) => handleInputChange(index, "branch", e.target.value)}
-                />
-                </>
-              )}
-              {eventname === "seminar3" && (
-                <>
-                <Form.Label>Branch</Form.Label>
-                <Form.Control
-                  type="Fixed"
-              
-                  value="Electronics & Telecommunication"
-                  onChange={(e) => handleInputChange(index, "branch", e.target.value)}
-                />
-                </>
-              )}
-              {eventname === "seminar4" && (
-                <>
-                <Form.Label>Branch</Form.Label>
-                <Form.Control
-                  type="Fixed"
-                
-                  value="Mechanical Engineering"
-                  onChange={(e) => handleInputChange(index, "branch", e.target.value)}
-                />
-                </>
-              )}
-               {eventname === "seminar5" && (
-                <>
-                <Form.Label>Branch</Form.Label>
-                <Form.Control
-                  type="Fixed"
-                
-                  value="Civil Engineering"
-                  onChange={(e) => handleInputChange(index, "branch", e.target.value)}
-                />
-                </>
-              )}
-               {eventname === "seminar6" && (
-                <>
-                <Form.Label>Branch</Form.Label>
-                <Form.Control
-                  type="Fixed"
-                
-                  value="TSEC"
-                  onChange={(e) => handleInputChange(index, "branch", e.target.value)}
-                />
-                </>
-              )}
-              
-            </Form.Group>
+  {eventname && (
+    <>
+      <Form.Label>Branch</Form.Label>
+      {eventname !== "seminar1" && eventname !== "seminar2" && eventname !== "seminar3" && eventname !== "seminar4" && eventname !== "seminar5" && eventname !== "seminar6" && (
+        <Form.Control
+          type="text"
+          placeholder="Enter branch"
+          value={participant.branch}
+          onChange={(e) => handleInputChange(index, "branch", e.target.value)}
+        />
+      )}
+      {eventname === "seminar1" && (
+        <Form.Control
+          type="text"
+          placeholder="Branch"
+          value="Computer Engineering"
+          onChange={(e) => handleInputChange(index, "branch", e.target.value)}
+        />
+      )}
+      {eventname === "seminar2" && (
+        <Form.Control
+          type="text"
+          placeholder="Branch"
+          value="Mechanical Engineering"
+          onChange={(e) => handleInputChange(index, "branch", e.target.value)}
+        />
+      )}
+      {eventname === "seminar3" && (
+        <Form.Control
+          type="text"
+          placeholder="Branch"
+          value="Electronics & Telecommunication"
+          onChange={(e) => handleInputChange(index, "branch", e.target.value)}
+        />
+      )}
+      {eventname === "seminar4" && (
+        <Form.Control
+          type="text"
+          placeholder="Branch"
+          value="Mechanical Engineering"
+          onChange={(e) => handleInputChange(index, "branch", e.target.value)}
+        />
+      )}
+      {eventname === "seminar5" && (
+        <Form.Control
+          type="text"
+          placeholder="Branch"
+          value="Civil Engineering"
+          onChange={(e) => handleInputChange(index, "branch", e.target.value)}
+        />
+      )}
+      {eventname === "seminar6" && (
+        <Form.Control
+          type="text"
+          placeholder="Branch"
+          value="TSEC"
+          onChange={(e) => handleInputChange(index, "branch", e.target.value)}
+        />
+      )}
+    </>
+  )}
+</Form.Group>
+
             {/* <Form.Group>
               <Form.Label>Phone Number</Form.Label>
               <Form.Control
