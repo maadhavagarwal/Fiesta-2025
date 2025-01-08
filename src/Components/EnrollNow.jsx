@@ -226,9 +226,9 @@ export default function ParticipantForm() {
       }
     ).then(({ data: { text } }) => {
       setOcrText(text);
-      console.log("OCR Result:", text); // Log the OCR result for debugging
+      // console.log("OCR Result:", text); // Log the OCR result for debugging
     }).catch((error) => {
-      console.error("OCR failed:", error);
+      
       toast.error("Failed to extract text from image.");
     });
   };
@@ -257,19 +257,10 @@ export default function ParticipantForm() {
       const yearFilled = p.year?.trim();
       const branchFilled = p.branch?.trim();
     
-      console.log('Participant:', p);
-      console.log('Name Filled:', nameFilled);
-      console.log('Email Filled:', emailFilled);
-      console.log('Phone Filled:', phoneFilled);
-      console.log('Age Filled:', ageFilled);
-      console.log('College Name Filled:', collegeNameFilled);
-      console.log('Year Filled:', yearFilled);
-      console.log('Branch Filled:', branchFilled);
     
       const isFilled =
         nameFilled && emailFilled && phoneFilled && ageFilled && collegeNameFilled && yearFilled && branchFilled;
     
-      console.log('Is Filled:', isFilled); // Check the final result of the condition
     
       return isFilled;
     }).length;
