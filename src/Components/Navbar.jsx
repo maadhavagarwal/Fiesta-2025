@@ -8,9 +8,11 @@ import gcLogo from "../Images/gcLogo.png";
 import fiestaLogo from "../Images/fiestaLogo.png";
 import iicMoe from "../Images/iicMoe.png";
 import TsecLogo from "../Images/TsecLogo.png";
-import Moe from "../Images/moe_innovation.jpeg"
+import Moe from "../Images/MOE2.png"
 import tpolyL from "../Images/tpolyLogo.png"; // 
-import MoeI from "../Images/moe_innovation.jpeg"
+import MoeI from "../Images/MOE1.png"
+import UNI from "../Images/uni.png"
+
 function Navbar() {
   const navigate = useNavigate();
 
@@ -62,8 +64,9 @@ function Navbar() {
               <img src={AICTClogo} alt="AICTC Logo" className="logo" />
               <img src={gcLogo} alt="GC Logo" className="logo" />
               <img src={iicMoe} alt="iicMoe Logo" className="logo" />
-              <img src={Moe} alt="iicMoe Logo" className="logo" />
-              <img src={MoeI} alt="iicMoe Logo" className="logo" />
+              <img src={UNI} alt="iicMoe Logo" className="logo" />
+              <img src={Moe} alt="iicMoe Logo" className="logo1" />
+              <img src={MoeI} alt="iicMoe Logo" className="logo1" />
             </div>
 
             {/* Nav Links */}
