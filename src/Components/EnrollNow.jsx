@@ -14,7 +14,7 @@ const eventAPIs = {
   ppt: "https://sheetdb.io/api/v1/mx2irw7wdlozb",
   elocution: "https://sheetdb.io/api/v1/b8a6v109rt4ju",
   mastermissfiesta: "https://sheetdb.io/api/v1/60xy0e7ryr8xu",
-  mystery: "https://sheetdb.io/api/v1/1zke8b28gsd04",
+  mystry: "https://sheetdb.io/api/v1/nzsex4qm4746a",
   seminar1: "https://sheetdb.io/api/v1/o6aq1fl2vjs4l",
   seminar2: "https://sheetdb.io/api/v1/al6wjwijgmpyf",
   seminar3: "https://sheetdb.io/api/v1/e315njaflvrm0",
@@ -30,16 +30,18 @@ const photoAPIs = {
   ppt: "https://script.google.com/macros/s/AKfycbyKKnrDkcFaCi9BVv0gR5Iygho1M-Zr196JKMYNa3M_kmN4GANUMlpog9zUdkHXIkW4/exec",
   elocution: "https://script.google.com/macros/s/AKfycbwaHOOl_waFfQjTtxvmX6_vMCR2oUoej3m2rn42r7j8gXhVzARYxzRyF4Og12UmkJUh/exec",
   mastermissfiesta: "https://script.google.com/macros/s/AKfycbxjgFpj0gPWg1P9jhGcuktzVyRSCXx8iOLEW22vJughUY2O0tau45H2O0CJA67z4OMk/exec",
- 
+  mystry:" https://script.google.com/macros/s/AKfycbzUoBCscUecSuiH3rp_0rBhbB5hUO6jWynhbqF-FtyAWjyE3SA4T38D33bSNiAnKt1z/exec",
 };
 
 const perPersonPrice = {
-  sparkstudio: 100,
-  ppt: 100,
-  // mystery: 81,
+
+
 };
 
 const fixedPaymentAmount = {
+    mystry: 51,
+  sparkstudio: 200,
+  ppt: 100,
   elocution: 100,
   ecoquiz: 100,
   mastermissfiesta: 100,
@@ -61,7 +63,7 @@ const eventLimits = {
   ppt: 2,
   elocution: 1,
   mastermissfiesta: 1,
-  mystery: 5,
+  mystry: 4,
   seminar1: 1,
   seminar2: 1,
   seminar3: 1,
@@ -78,6 +80,7 @@ const stallTypeLimits = {
 
 export default function ParticipantForm() {
   const [participants, setParticipants] = useState([]);
+  const [driveLink, setDriveLink] = useState("");
   const [groupName, setGroupName] = useState("");
   const [transactionId, setTransactionId] = useState("");
   const [electronicProducts, setElectronicProducts] = useState("");
@@ -126,7 +129,7 @@ export default function ParticipantForm() {
       fetch(photoAPIs[eventname], //your AppsScript URL
         { method: "POST", body: JSON.stringify(dataSend) }) //send to Api
         .then(res => res.json()).then((a) => {
-          console.log(a) //See response
+          setDriveLink(a.url) //save the link to state
         }).catch(e => console.log(e)) // Or Error in console
     }}
 
@@ -328,6 +331,7 @@ if (eventname === "seminar1" || eventname === "seminar2" || eventname === "semin
       groupId: Date.now().toString(),
       groupName,
       stallDetails,
+      driveLink,
       stallType,
       transactionId,
       totalPrice,

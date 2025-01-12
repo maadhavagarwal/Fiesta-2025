@@ -25,7 +25,7 @@ function Navbar() {
           <span>Fiesta</span>
         </Link>
 <img src={tpolyL} alt="TPO Logo" className="logo me-2" style={{height: "50px",width: "75px"}} />
-{/* <img src={TsecLogo} alt="TPO Logo" className="logo me-2" style={{height: "50px",width: "75px"}} /> */}
+<img src={TsecLogo} alt="TPO Logo" className="logo " style={{height: "70px",width: "95px"}} />
 
         {/* Toggler */}
         <button

@@ -41,10 +41,11 @@
     },
     "mystry": {
         "EventName": "Mystry",
-        "Description": "vjnkjnv nfsnfs dfjskdnfsf sfjnskfnskdnf sfjksnfjsnf sjfnsfjns fjfnsjnfsjnf fkjsnfjnsf sjnfs f fnsfjnsofina f koinfon d sjdnfosijf oisjfsn f isjfks f ijf sfisdkf snfsijms fksd fkjnsofnm f sfojskf s skjfehgheg hehgeg huypsuibdbgey gegliwrygb gygfihrfiuhw end...",
-        "Fee": 81,
+        "Description": "Step into the unknown! 🕵‍♀✨  \nAre you ready to unravel the mystery?\n       Here's the twist: the event details are shrouded in secrecy and will only be revealed on the spot. Rules? Strategies? Challenges? You'll learn them tabhi hi!  \nThis isn't just an event; it's a test of your curiosity, wit, and quick thinking. Come prepared to expect the unexpected. Trust us, the thrill lies in the surprise!  \nJoin us and uncover the enigma that awaits... if you dare!",
+        "Fee": 51,
         "Date": "",
-        "Rule": ""
+        "Rule": "",
+        "image":"mystry.jpg" 
     },
     "miw": {
         "EventName": "Mock Interview Workshop",

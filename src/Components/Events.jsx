@@ -9,6 +9,7 @@ import SE from "../Images/5.jpg";
 import mmf from "../Images/13.jpg";
 import ppt from "../Images/14.jpg";
 import miw from "../Images/12.jpg";
+import mystry from "../Images/mycard.jpg";
 
 export default function Events() {
   const [cardStyle, setCardStyle] = useState({});
@@ -21,6 +22,7 @@ export default function Events() {
     { eventName: "mmf", poster: mmf, displayName: "Master & Miss Fiesta" },
     { eventName: "ecoquiz", poster: EQ, displayName: "Eco Quiz" },
     { eventName: "ppt", poster: ppt, displayName: "PPT Case Study" },
+    { eventName: "mystry", poster: mystry, displayName: "Mystry" },
     { eventName: "seminar", poster: SE, displayName: "Seminars" },
   ];
 

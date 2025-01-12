@@ -145,7 +145,11 @@ iframe {
   border: none;
   border-radius: 10px;
 }
-
+.event-image{
+  width: 50%;
+  height: 50%;
+  border-radius: 5%;
+}
 /* Responsive Design */
 @media (max-width: 768px) {
   .event-info {
@@ -171,7 +175,7 @@ iframe {
   }
   .event-image{
     width: 80%;
-    height: 50%;
+    height: 20%;
     border-radius: 5%;
   }
 }
