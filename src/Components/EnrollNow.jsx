@@ -34,14 +34,12 @@ const photoAPIs = {
 };
 
 const perPersonPrice = {
-
-
+  sparkstudio: 100,
+  ppt: 100,
+  // mystery: 81,
 };
 
 const fixedPaymentAmount = {
-    mystry: 51,
-  sparkstudio: 200,
-  ppt: 100,
   elocution: 100,
   ecoquiz: 100,
   mastermissfiesta: 100,

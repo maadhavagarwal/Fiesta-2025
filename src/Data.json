@@ -10,7 +10,7 @@
     "sparkstudio": {
         "EventName": "Spark Studio",
         "Description": "Spark Studio, an electrifying event at Fiesta, features the thrilling Shark Tank challenge. Entrepreneurs pitch their ideas to savvy investors, igniting sparks of innovation and potential business ventures",
-        "Fee": "100 per person",
+        "Fee": "200",
         "Date": "",
         "Rule": "https://drive.google.com/file/d/10wCf2MUjzjD6oLZFnOPfcPfZngxE8vBx/view?usp=sharing",
         "image": "ss.jpg"
@@ -58,7 +58,7 @@
     "ppt": {
         "EventName": "Paper presentation case study",
         "Description": "A PPT case study is your gateway to unraveling a real-world mystery! Dive into a gripping narrative packed with challenges, bold analyses, and game-changing solutions, all brought to life through stunning visuals and powerful insights. It's not just a presentation—it's an electrifying journey of discovery and innovation!",
-        "Fee": "100 per person",
+        "Fee": "100",
         "Date": "",
         "Rule": "https://drive.google.com/file/d/13IAT5MMboB8-j4QkjW20-jK--KptdbqF/view?usp=sharing",
         "image": "ppt.jpg"
