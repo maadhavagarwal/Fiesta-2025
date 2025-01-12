@@ -40,7 +40,7 @@ const perPersonPrice = {
 const fixedPaymentAmount = {
   sparkstudio: 200,
   ppt: 100,
-  mystery: 51,
+  mystry: 51,
   elocution: 100,
   ecoquiz: 100,
   mastermissfiesta: 100,
