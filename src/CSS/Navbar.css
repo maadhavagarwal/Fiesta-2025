@@ -66,7 +66,7 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .logo {
-    width: 50px; /* Keeping the previous size for logo */
+    width: 70px; /* Keeping the previous size for logo */
     height: 50px;
     padding-left: 10px;  /* Adjusting padding for smaller screens */
   }
