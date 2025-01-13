@@ -157,27 +157,31 @@ export default function ParticipantForm() {
     }
   };
 
-  const handlePaymentConfirmation = () => {
-    if (!transactionId.trim() ) {
-      toast.error("Please complete payment details.");
-      return;
-    }
+const handlePaymentConfirmation = () => {
+  if (!transactionId.trim()) {
+    toast.error("Please complete payment details.");
+    return;
+  }
 
-    // Check if the transaction ID is unique
-    if (existingTransactionIds.includes(transactionId)) {
-      toast.error("This transaction ID has already been used.");
-      return;
-    }
+  // Normalize and trim OCR text and transaction ID
+  const normalizedOcrText = ocrText.toLowerCase().trim();
+  const normalizedTransactionId = transactionId.toLowerCase().trim();
 
-    // Verify the OCR text and compare it with the transaction ID and amount
-    if (ocrText.includes(transactionId) && ocrText.includes(totalPrice.toString())) {
-      setIsPaymentDone(true);
-      setIsOcrVerified(true);
-      toast.success("Payment confirmed! You can now submit the form.");
-    } else {
-      toast.error("Transaction ID or amount does not match. Please verify the details.");
-    }
-  };
+  // Log OCR text for debugging
+  console.log("Normalized OCR Text:", normalizedOcrText);
+
+  // Check if the OCR text includes the transaction ID and amount
+  if (
+    normalizedOcrText.includes(normalizedTransactionId) &&
+    normalizedOcrText.includes(totalPrice.toString())
+  ) {
+    setIsPaymentDone(true);
+    setIsOcrVerified(true);
+    toast.success("Payment confirmed! You can now submit the form.");
+  } else {
+    toast.error("Transaction ID or amount does not match. Please verify the details.");
+  }
+};
 
   const handleImageUpload = async (event) => {
     const file = event.target.files[0];
@@ -224,16 +228,33 @@ export default function ParticipantForm() {
       file,
       "eng", // Language
       {
-        logger: (m) => console.log(m),
+        logger: (m) => console.log(m), // Log progress for debugging
       }
     ).then(({ data: { text } }) => {
-      setOcrText(text);
-      // console.log("OCR Result:", text); // Log the OCR result for debugging
+      setOcrText(text); // Store the entire OCR text
+      console.log("OCR Result:", text); // Log the OCR result for debugging
+  
+      // Extract the UPI transaction ID from the OCR text
+      const upiTransactionId = extractTransactionId(text);
+      if (upiTransactionId) {
+        setTransactionId(upiTransactionId); // Auto-fill the transaction ID field
+        toast.success("Transaction ID detected and auto-filled.");
+      } else {
+        toast.error("Failed to extract UPI transaction ID from the image.");
+      }
     }).catch((error) => {
-      
+      console.error("OCR failed:", error);
       toast.error("Failed to extract text from image.");
     });
   };
+  
+  const extractTransactionId = (text) => {
+    // Regular expression to match UPI transaction ID pattern (example pattern)
+    const transactionIdPattern = /\b\d{12}\b/g; // Adjust the pattern as per actual UPI transaction ID format
+    const match = text.match(transactionIdPattern);
+    return match ? match[0] : null; // Return the first match if available
+  };
+  
 
   const handleInputChange = (index, field, value) => {
     setParticipants((prev) => {
