@@ -8,7 +8,7 @@ import "../CSS/EnrolNow.css";
 
 const eventAPIs = {
   businessfair: "https://sheetdb.io/api/v1/dya4xmkayf7re",
-  sparkstudio: "https://sheetdb.io/api/v1/1v3p7rm3ioz4y",
+  sparkstudio: "https://sheetdb.io/api/v1/q47bs88i70un3",
   ecoquiz: "https://sheetdb.io/api/v1/gzsa9kzk2svkv",
   miw: "https://sheetdb.io/api/v1/qn3zkb9qi9rwl",
   ppt: "https://sheetdb.io/api/v1/mx2irw7wdlozb",
@@ -157,31 +157,13 @@ export default function ParticipantForm() {
     }
   };
 
-const handlePaymentConfirmation = () => {
-  if (!transactionId.trim()) {
-    toast.error("Please complete payment details.");
-    return;
-  }
+  const handlePaymentConfirmation = () => {
+    if (!transactionId.trim() ) {
+      toast.error("Please complete payment details.");
+      return;
+    }
 
-  // Normalize and trim OCR text and transaction ID
-  const normalizedOcrText = ocrText.toLowerCase().trim();
-  const normalizedTransactionId = transactionId.toLowerCase().trim();
-
-  // Log OCR text for debugging
-  // console.log("Normalized OCR Text:", normalizedOcrText);
-
-  // Check if the OCR text includes the transaction ID and amount
-  if (
-    normalizedOcrText.includes(normalizedTransactionId) &&
-    normalizedOcrText.includes(totalPrice.toString())
-  ) {
-    setIsPaymentDone(true);
-    setIsOcrVerified(true);
-    toast.success("Payment confirmed! You can now submit the form.");
-  } else {
-    toast.error("Transaction ID or amount does not match. Please verify the details.");
-  }
-};
+  };
 
   const handleImageUpload = async (event) => {
     const file = event.target.files[0];
@@ -236,9 +218,11 @@ const handlePaymentConfirmation = () => {
   
       // Extract the UPI transaction ID from the OCR text
       const upiTransactionId = extractTransactionId(text);
-      if (upiTransactionId) {
+      if (upiTransactionId ) {
         setTransactionId(upiTransactionId); // Auto-fill the transaction ID field
         toast.success("Transaction ID detected and auto-filled.");
+        setIsPaymentDone(true);
+      setIsOcrVerified(true);
       } else {
         toast.error("Failed to extract UPI transaction ID from the image.");
       }
@@ -375,15 +359,17 @@ if (eventname === "seminar1" || eventname === "seminar2" || eventname === "semin
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ data }),
       });
-
+console.log(response);
       if (response.ok) {
         toast.success("Registration successful!");
         navigate("/");
       } else {
         throw new Error("Failed to submit data.");
+        // console.log(error);
       }
     } catch (error) {
       toast.error("Error submitting data. Please try again.");
+      console.log(error)
     }
   };
 
