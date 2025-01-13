@@ -608,16 +608,20 @@ console.log(response);
             placeholder="Enter transaction ID"
           />
         </Form.Group>
-
         <Form.Group>
-          <Form.Label>Transaction ID</Form.Label>
-          <Form.Control
-            type="text"
-            value={transactionId}
-            onChange={(e) => setTransactionId(e.target.value)}
-            placeholder="Enter transaction ID"
-          />
-        </Form.Group>
+  <Form.Label>Transaction ID</Form.Label>
+  <Form.Control
+    type="text"
+    value={transactionId}
+    readOnly // Make the field read-only
+    placeholder="Auto-detected transaction ID"
+    style={{ backgroundColor: "#e9f5e9" }} // Optional: Add a highlight
+  />
+  <Form.Text className="text-muted">
+    This field is auto-detected and cannot be edited.
+  </Form.Text>
+</Form.Group>
+
 
         <Form.Group>
           <Form.Label>Upload Payment Proof</Form.Label>
