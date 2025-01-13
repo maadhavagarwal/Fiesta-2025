@@ -140,7 +140,7 @@ export default function ParticipantForm() {
       const stalls = foodStalls.map((entry) => entry);
       setTakenStallDetails(stalls);
     } catch (error) {
-      console.error("Error fetching taken food stalls:", error);
+      // console.error("Error fetching taken food stalls:", error);
       toast.error("Failed to fetch taken food stall details.");
     }
   };
@@ -153,7 +153,7 @@ export default function ParticipantForm() {
       const transactionIds = data.map((entry) => entry.transactionId);
       setExistingTransactionIds(transactionIds);
     } catch (error) {
-      console.error("Error fetching existing transaction IDs:", error);
+      // console.error("Error fetching existing transaction IDs:", error);
     }
   };
 
@@ -168,7 +168,7 @@ const handlePaymentConfirmation = () => {
   const normalizedTransactionId = transactionId.toLowerCase().trim();
 
   // Log OCR text for debugging
-  console.log("Normalized OCR Text:", normalizedOcrText);
+  // console.log("Normalized OCR Text:", normalizedOcrText);
 
   // Check if the OCR text includes the transaction ID and amount
   if (
@@ -210,9 +210,9 @@ const handlePaymentConfirmation = () => {
         });
   
         const result = await response.json();
-        console.log(result); // Handle the response
+        // console.log(result); // Handle the response
       } catch (error) {
-        console.error("Error uploading file:", error);
+        // console.error("Error uploading file:", error);
         toast.error("File upload failed.");
       }
     };
@@ -232,7 +232,7 @@ const handlePaymentConfirmation = () => {
       }
     ).then(({ data: { text } }) => {
       setOcrText(text); // Store the entire OCR text
-      console.log("OCR Result:", text); // Log the OCR result for debugging
+      // console.log("OCR Result:", text); // Log the OCR result for debugging
   
       // Extract the UPI transaction ID from the OCR text
       const upiTransactionId = extractTransactionId(text);
@@ -243,7 +243,7 @@ const handlePaymentConfirmation = () => {
         toast.error("Failed to extract UPI transaction ID from the image.");
       }
     }).catch((error) => {
-      console.error("OCR failed:", error);
+      // console.error("OCR failed:", error);
       toast.error("Failed to extract text from image.");
     });
   };
@@ -288,7 +288,7 @@ const handlePaymentConfirmation = () => {
       return isFilled;
     }).length;
     
-    console.log('Filled count:', filledCount);
+    // console.log('Filled count:', filledCount);
         
     
     // console.log('Filled count:',); // Log the final count
