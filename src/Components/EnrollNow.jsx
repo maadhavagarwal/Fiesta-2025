@@ -100,7 +100,6 @@ export default function ParticipantForm() {
   const [existingTransactionIds, setExistingTransactionIds] = useState([]);
   const navigate = useNavigate();
   const { eventname } = useParams();
-  console.log(stallUserType)
   useEffect(() => {
     initializeParticipants();
     if (eventname === "businessfair") {
@@ -305,10 +304,10 @@ export default function ParticipantForm() {
   
 
   const handleSubmit = async () => {
-    if (!groupName.trim()) {
-      toast.error("Please enter a group name.");
-      return;
-    }
+    // if (!groupName.trim()) {
+    //   toast.error("Please enter a group name.");
+    //   return;
+    // }
 
     // if (!isPaymentDone || !isOcrVerified) {
     //   toast.error("Please confirm and verify the payment before submitting.");
@@ -390,13 +389,17 @@ console.log(response);
 
       <Form>
         <Form.Group>
-          <Form.Label>Group Name</Form.Label>
+        {eventLimits > 1 &&(
+          
+          <><Form.Label>Group Name</Form.Label>
           <Form.Control
             type="text"
             placeholder="Enter group name"
             value={groupName}
             onChange={(e) => setGroupName(e.target.value)}
           />
+          </>
+          )}
         </Form.Group>
 
         {eventname === "businessfair" && (
