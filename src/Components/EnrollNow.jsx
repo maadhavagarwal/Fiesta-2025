@@ -223,7 +223,7 @@ export default function ParticipantForm() {
   
       // Extract the UPI transaction ID from the OCR text
       const upiTransactionId = extractTransactionId(text);
-      if (upiTransactionId ) {
+      if (upiTransactionId && !existingTransactionIds.includes(upiTransactionId && upiTransactionId.length === 12)) {
         setTransactionId(upiTransactionId); // Auto-fill the transaction ID field
         toast.success("Transaction ID detected and auto-filled.");
         setIsPaymentDone(true);
