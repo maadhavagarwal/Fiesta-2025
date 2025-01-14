@@ -120,7 +120,12 @@ export default function Home() {
       </video>
     )}
       </div>
-
+<h1 className="main-heading" style={{
+        fontSize: "2rem",
+        fontWeight: "bold",
+        textAlign: "center",
+        marginTop: "20px",
+}}>Dates :29th Jan &30thJan</h1>
       {/* Introduction Section */}
       <section className="Intro-us">
         <h2>Introduction</h2>

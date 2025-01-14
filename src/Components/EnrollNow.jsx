@@ -63,7 +63,7 @@ const eventLimits = {
   ppt: 2,
   elocution: 1,
   mastermissfiesta: 1,
-  mystry: 4,
+  mystry: 6,
   seminar1: 1,
   seminar2: 1,
   seminar3: 1,
