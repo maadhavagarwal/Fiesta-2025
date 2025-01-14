@@ -7,7 +7,7 @@ import qr from "../Images/qr.jpg";
 import "../CSS/EnrolNow.css";
 
 const eventAPIs = {
-  businessfair: "https://sheetdb.io/api/v1/dya4xmkayf7re",
+  businessfair: "https://sheetdb.io/api/v1/bztbzd3842qtg",
   sparkstudio: "https://sheetdb.io/api/v1/q47bs88i70un3",
   ecoquiz: "https://sheetdb.io/api/v1/gzsa9kzk2svkv",
   miw: "https://sheetdb.io/api/v1/qn3zkb9qi9rwl",
