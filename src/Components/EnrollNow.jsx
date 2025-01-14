@@ -501,12 +501,13 @@ console.log(response);
               />
             </Form.Group>
             <Form.Group>
-              {eventname === "mastermissfiesta" || eventname === "mastermissfiesta" || eventname === "seminar1" || eventname === "seminar2" || eventname === "seminar3" || eventname === "seminar3" || eventname === "seminar4" || eventname === "seminar5" || eventname === "seminar6"?<>
+              {eventname === "mastermissfiesta" || eventname === "miw" || eventname === "seminar1" || eventname === "seminar2" || eventname === "seminar3" || eventname === "seminar3" || eventname === "seminar4" || eventname === "seminar5" || eventname === "seminar6"?<>
                 <Form.Label>College Name</Form.Label>
               <Form.Control
                 type="Fixed"
-         
-                value="Thakur Polytechnic"
+                readOnly
+                placeholder="Thakur Polytechnic"
+                value={participant.collegeName}
                 onChange={(e) => handleInputChange(index, "collegeName", e.target.value)}
               />
               </>:<>
