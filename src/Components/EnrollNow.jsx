@@ -46,6 +46,7 @@ const fixedPaymentAmount = {
   mastermissfiesta: 100,
   miw: 100,
   businessfair: 911.00,
+  businessfairfaculty:1200,
   seminar1: 0,
   seminar2: 0,
   seminar3: 0,
@@ -77,6 +78,8 @@ const stallTypeLimits = {
   other: 4,
 };
 
+
+
 export default function ParticipantForm() {
   const [participants, setParticipants] = useState([]);
   const [driveLink, setDriveLink] = useState("");
@@ -85,16 +88,19 @@ export default function ParticipantForm() {
   const [electronicProducts, setElectronicProducts] = useState("");
   const [paymentImage, setPaymentImage] = useState(null);
   const [stallDetails, setStallDetails] = useState("");
-  const [stallType, setStallType] = useState("");
+  const [stallType, setStallType] = useState("Select Stall Type");
   const [takenStallDetails, setTakenStallDetails] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const [ocrText, setOcrText] = useState("");
   const [isOcrVerified, setIsOcrVerified] = useState(false);
   const [isPaymentDone, setIsPaymentDone] = useState(false);
+  const [stallUserType,setStallUserType]=useState(
+
+  )
   const [existingTransactionIds, setExistingTransactionIds] = useState([]);
   const navigate = useNavigate();
   const { eventname } = useParams();
-
+  console.log(stallUserType)
   useEffect(() => {
     initializeParticipants();
     if (eventname === "businessfair") {
@@ -136,7 +142,7 @@ export default function ParticipantForm() {
     try {
       const response = await fetch(eventAPIs[eventname]);
       const data = await response.json();
-      const foodStalls = data.filter(entry => entry.stallType === "food"); // Filter for food stalls
+      const foodStalls = data.filter(entry => entry.stallType === "food" || "service" || "games" || "other"); // Filter for food stalls
       const stalls = foodStalls.map((entry) => entry);
       setTakenStallDetails(stalls);
     } catch (error) {
@@ -282,7 +288,12 @@ export default function ParticipantForm() {
   
     // Calculate total price based on fixed or per-person pricing
     if (fixedPaymentAmount[eventname]) {
+      if (stallUserType === "Faculty") {
+        setTotalPrice(fixedPaymentAmount.businessfairfaculty);
+      }
+      else{
       setTotalPrice(fixedPaymentAmount[eventname]);
+      }
     } else if (perPersonPrice[eventname]) {
       setTotalPrice(filledCount * perPersonPrice[eventname]);
     }
@@ -405,6 +416,19 @@ console.log(response);
                 ))}
               </Form.Control>
             </Form.Group>
+            <Form.Group>
+              <Form.Label>Select Any One </Form.Label>
+              <Form.Control
+                as="select"
+                value={stallUserType}
+                onChange={(e) => setStallUserType(e.target.value)}
+              >
+                <option value="">Select Option</option>
+                 <option>Student</option>
+                 <option>Faculty</option>
+                
+              </Form.Control>
+            </Form.Group>
 
             <Form.Group>
               <Form.Label>Stall Details</Form.Label>
@@ -416,7 +440,7 @@ console.log(response);
               />
             </Form.Group>
             <Form.Group>
-  <Form.Label>Electronic Products</Form.Label>
+  <Form.Label>Electronic Products(Must bring your own extensiob board)</Form.Label>
   <Form.Control
     type="text"
     placeholder="Enter electronic products you are bringing"
@@ -583,14 +607,12 @@ console.log(response);
         {eventname === "seminar1" || eventname === "seminar2" || eventname === "seminar3" || eventname === "seminar3" || eventname === "seminar4" || eventname === "seminar5" || eventname === "seminar6"?
         <>
         <Form.Group>
-          
-          <Form.Label>Payable amount </Form.Label>
           <Form.Control
-            type="Fixed"
-            value={totalPrice}
-            // onChange={(e) => setTransactionId(e.target.value)}
-            placeholder="Enter transaction ID"
-          />
+          type="Fixed"
+          value={totalPrice}
+          // onChange={(e) => setTransactionId(e.target.value)}
+          placeholder="Enter transaction ID"
+        />
         </Form.Group>
           <Button variant="success" onClick={handleSubmit}>
             Submit Registration
@@ -598,15 +620,26 @@ console.log(response);
    </>
           :
           <>
- <Form.Group>
-          
+        <Form.Group>
+
           <Form.Label>Payable amount </Form.Label>
-          <Form.Control
+        {stallUserType === "Faculty" ?<>
+          {/* console.log(stallUserType) */}
+            <Form.Control
             type="Fixed"
-            value={totalPrice}
+            value={fixedPaymentAmount.businessfairfaculty}
             // onChange={(e) => setTransactionId(e.target.value)}
             placeholder="Enter transaction ID"
           />
+          </>
+          :
+          <Form.Control
+          type="Fixed"
+          value={totalPrice}
+          // onChange={(e) => setTransactionId(e.target.value)}
+          placeholder="Enter transaction ID"
+        />
+          }
         </Form.Group>
         <Form.Group>
   <Form.Label>Transaction ID</Form.Label>
@@ -621,8 +654,6 @@ console.log(response);
     This field is auto-detected and cannot be edited.
   </Form.Text>
 </Form.Group>
-
-
         <Form.Group>
           <Form.Label>Upload Payment Proof</Form.Label>
           <Form.Control
