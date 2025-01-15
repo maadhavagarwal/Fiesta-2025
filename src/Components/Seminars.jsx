@@ -13,12 +13,12 @@ export default function Seminars() {
   const [selectedBranch, setSelectedBranch] = useState("");
 
   const seminars = [
-    { branch: "Computer Engineering", seminarName: "seminar1", poster: s1, displayName: "CO Seminar 1" },
-    { branch: "Mechanical Engineering", seminarName: "seminar2", poster: s2, displayName: "ME Seminar 2" },
-    { branch: "Electronics & Telecommunication", seminarName: "seminar3", poster: s3, displayName: "ETC Seminar 3" },
-    { branch: "Mechanical Engineering", seminarName: "seminar4", poster: s4, displayName: "ME Seminar 4" },
-    { branch: "Civil Engineering", seminarName: "seminar5", poster: s5, displayName: "Civil Seminar 5" },
-    { branch: "TSEC", seminarName: "seminar6", poster: s6, displayName: "TSEC Seminar 6" },
+    { branch: "Computer Engineering", seminarName: "seminar1", poster: s1, displayName: "CO Seminar " },
+    { branch: "Mechanical Engineering", seminarName: "seminar2", poster: s2, displayName: "ME Seminar " },
+    { branch: "Electronics & Telecommunication", seminarName: "seminar3", poster: s3, displayName: "ETC Seminar " },
+    { branch: "Information tecnology", seminarName: "seminar4", poster: s4, displayName: "IF Seminar " },
+    { branch: "Civil Engineering", seminarName: "seminar5", poster: s5, displayName: "Civil Seminar " },
+    { branch: "TSEC", seminarName: "seminar6", poster: s6, displayName: "TSEC Seminar " },
   ];
 
   const handleBranchChange = (event) => {
@@ -37,6 +37,7 @@ export default function Seminars() {
               <option value="Computer Engineering">Computer Engineering</option>
               <option value="Mechanical Engineering">Mechanical Engineering</option>
               <option value="Electronics & Telecommunication">Electronics & Telecommunication</option>
+              <option value="Information tecnology">Information tecnology</option>
               <option value="Civil Engineering">Civil Engineering</option>
               <option value="TSEC">TSEC</option>
             </select>
