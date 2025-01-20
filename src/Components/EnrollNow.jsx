@@ -49,6 +49,7 @@ const fixedPaymentAmount = {
   ecoquiz: 100,
   mastermissfiesta: 100,
   miw: 100,
+  mmf:100,
   businessfair: 911.0,
   businessfairfaculty: 1200,
   seminar1: 0,
