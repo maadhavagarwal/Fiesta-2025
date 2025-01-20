@@ -13,7 +13,7 @@ const eventAPIs = {
   miw: "https://sheetdb.io/api/v1/qn3zkb9qi9rwl",
   ppt: "https://sheetdb.io/api/v1/mx2irw7wdlozb",
   elocution: "https://sheetdb.io/api/v1/b8a6v109rt4ju",
-  mmf: "https://sheetdb.io/api/v1/60xy0e7ryr8xu",
+  mmf: "https://sheetdb.io/api/v1/ybo9zku6nr4v2",
   mystry: "https://sheetdb.io/api/v1/nzsex4qm4746a",
   seminar1: "https://sheetdb.io/api/v1/o6aq1fl2vjs4l",
   seminar2: "https://sheetdb.io/api/v1/al6wjwijgmpyf",
