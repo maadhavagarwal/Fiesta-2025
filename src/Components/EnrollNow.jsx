@@ -255,7 +255,7 @@ export default function ParticipantForm() {
 
   const extractTransactionId = (text) => {
     // Regular expression to match UPI transaction ID pattern (example pattern)
-    const transactionIdPattern = /\b\d{12}\b/g; // Adjust the pattern as per actual UPI transaction ID format
+    const transactionIdPattern = /\b[A-Z0-9]{12,}\b/g; // Adjust for alphanumeric IDs of 12+ characters
     const match = text.match(transactionIdPattern);
     return match ? match[0] : null; // Return the first match if available
   };
