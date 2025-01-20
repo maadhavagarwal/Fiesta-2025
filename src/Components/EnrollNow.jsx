@@ -13,7 +13,7 @@ const eventAPIs = {
   miw: "https://sheetdb.io/api/v1/qn3zkb9qi9rwl",
   ppt: "https://sheetdb.io/api/v1/mx2irw7wdlozb",
   elocution: "https://sheetdb.io/api/v1/b8a6v109rt4ju",
-  mastermissfiesta: "https://sheetdb.io/api/v1/60xy0e7ryr8xu",
+  mmf: "https://sheetdb.io/api/v1/60xy0e7ryr8xu",
   mystry: "https://sheetdb.io/api/v1/nzsex4qm4746a",
   seminar1: "https://sheetdb.io/api/v1/o6aq1fl2vjs4l",
   seminar2: "https://sheetdb.io/api/v1/al6wjwijgmpyf",
@@ -33,7 +33,7 @@ const photoAPIs = {
   ppt: "https://script.google.com/macros/s/AKfycbyKKnrDkcFaCi9BVv0gR5Iygho1M-Zr196JKMYNa3M_kmN4GANUMlpog9zUdkHXIkW4/exec",
   elocution:
     "https://script.google.com/macros/s/AKfycbwaHOOl_waFfQjTtxvmX6_vMCR2oUoej3m2rn42r7j8gXhVzARYxzRyF4Og12UmkJUh/exec",
-  mastermissfiesta:
+  mmf:
     "https://script.google.com/macros/s/AKfycbxjgFpj0gPWg1P9jhGcuktzVyRSCXx8iOLEW22vJughUY2O0tau45H2O0CJA67z4OMk/exec",
   mystry:
     " https://script.google.com/macros/s/AKfycbzUoBCscUecSuiH3rp_0rBhbB5hUO6jWynhbqF-FtyAWjyE3SA4T38D33bSNiAnKt1z/exec",
@@ -67,7 +67,7 @@ const eventLimits = {
   miw: 1,
   ppt: 2,
   elocution: 1,
-  mastermissfiesta: 1,
+  mmf: 1,
   mystry: 6,
   seminar1: 1,
   seminar2: 1,
@@ -255,11 +255,35 @@ export default function ParticipantForm() {
   };
 
   const extractTransactionId = (text) => {
-    // Regular expression to match UPI transaction ID pattern (example pattern)
-    const transactionIdPattern = /\b[A-Z0-9]{12,}\b/g; // Adjust for alphanumeric IDs of 12+ characters
-    const match = text.match(transactionIdPattern);
-    return match ? match[0] : null; // Return the first match if available
+    if (text) {
+      console.log("OCR Text:", text); // Debug the OCR output
+  
+      // Try numeric match
+      const numericPattern = /\b[0-9]{12,}\b/g;
+      const numericMatch = text.match(numericPattern);
+      if (numericMatch) {
+        console.log("Numeric Match Found:", numericMatch);
+        setTransactionId(numericMatch[0]); // Use the first numeric match
+        return numericMatch[0];
+      }
+  
+      // Try alphanumeric match
+      const alphanumericPattern = /\b[A-Z0-9]{12,}\b/g;
+      const alphanumericMatch = text.match(alphanumericPattern);
+      if (alphanumericMatch) {
+        console.log("Alphanumeric Match Found:", alphanumericMatch);
+        setTransactionId(alphanumericMatch[0]); // Use the first alphanumeric match
+        return alphanumericMatch[0];
+      }
+  
+      console.warn("No Match Found");
+      return null;
+    }
+  
+    console.error("Text is null or undefined.");
+    return null;
   };
+  
 
   const handleInputChange = (index, field, value) => {
     setParticipants((prev) => {
