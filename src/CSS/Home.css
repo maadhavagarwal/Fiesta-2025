@@ -10,6 +10,48 @@
   overflow: hidden;
   background-image: url(''); /* Fallback for browsers */
 }
+.insights {
+  margin: 1rem 0; /* Adds some spacing */
+  padding: 1rem;
+  background-color: #f9f9f9; /* Light background for better visibility */
+  border-radius: 8px; /* Rounded corners */
+  text-align: center;
+}
+
+.insights h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.sponsor-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Centers the image */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .insights h2 {
+    font-size: 1.5rem;
+  }
+
+  .sponsor-image {
+    width: 80%; /* Adjust image size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .insights h2 {
+    font-size: 1.2rem;
+  }
+
+  .sponsor-image {
+    width: 90%; /* Further adjust for very small screens */
+  }
+}
+
 
 .hero-video {
   position: absolute;

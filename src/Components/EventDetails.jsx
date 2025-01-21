@@ -50,6 +50,9 @@ export default function EventDetails() {
                 <h4>Fee: {eventdata[param].Fee}</h4>
               </ListGroup.Item>
               <ListGroup.Item>
+                <h4>Date: {eventdata[param].Date}</h4>
+                </ListGroup.Item>
+              <ListGroup.Item>
                 <p>{eventdata[param].Description}</p>
               </ListGroup.Item>
             </ListGroup>

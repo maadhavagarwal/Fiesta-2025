@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import "../CSS/Home.css";
 import videoFile from "../Images/Fiesta 2.mp4"; // Video file
@@ -137,6 +137,10 @@ export default function Home() {
       </section>
 
       {/* Last Year's Insights Section */}
+      <section className="insights my-2">
+        <h2 className="text-center">Event Sponsor's</h2>
+      <Link to="https://www.mindcraft.in/">  <img src={require(`../Images/mc.png`)} alt="Sponsor" className="sponsor-image" /></Link>
+      </section>
       <section className="insights my-2">
         <h2 className="text-center">Last Year's Insights</h2>
         <div className="insight-cards">
