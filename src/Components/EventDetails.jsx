@@ -76,7 +76,21 @@ export default function EventDetails() {
                 Rule Book
               </Button>
             )}
+            
           </Card>
+          {eventdata[param].sponsor && (
+  <ListGroup.Item>
+    <h1>Presented By:</h1>
+    <Image
+      src={require(`../Images/${eventdata[param].sponsor}`)} // Using require for dynamic image paths
+      alt={eventdata[param].EventName}
+      fluid
+      className="event-image"
+    />
+    <h3>{eventdata[param].sponsord}</h3>
+  </ListGroup.Item>
+)}
+
         </Col>
       </Row>
 

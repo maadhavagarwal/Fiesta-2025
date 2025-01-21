@@ -5,7 +5,9 @@
         "Fee": 911,
         "Date": "29-30th Jan",
         "Rule": "https://drive.google.com/file/d/1m-plNQhQfiT-4Na_iyXLdngiT51CtkdM/view?usp=sharing",
-        "image": "bf.jpg"
+        "image": "bf.jpg",
+        "sponsor":"",
+        "sponsord":""
     },
     "sparkstudio": {
         "EventName": "Spark Studio",
@@ -13,7 +15,9 @@
         "Fee": "200",
         "Date": "29th Jan (Day 1)",
         "Rule": "https://drive.google.com/file/d/10wCf2MUjzjD6oLZFnOPfcPfZngxE8vBx/view?usp=sharing",
-        "image": "ss.jpg"
+        "image": "ss.jpg",
+        "sponsor":"",
+        "sponsord":""
     },
     "ecoquiz": {
         "EventName": "Ecoquiz",
@@ -21,7 +25,9 @@
         "Fee": 100,
         "Date": "30th Jan (Day 2)",
         "Rule": "https://drive.google.com/file/d/1HmcBQDsVI5fVQ-BNXDJeQ2znScWApF8M/view?usp=sharing",
-        "image": "ecoquiz.jpg"
+        "image": "ecoquiz.jpg",
+        "sponsor":"",
+        "sponsord":""
     },
     "elocution": {
         "EventName": "Elocution",
@@ -29,7 +35,9 @@
         "Fee": 100,
         "Date": "29th Jan (Day 1)",
         "Rule": "https://drive.google.com/file/d/18weLxUo8_bpw2I-9bx6mK_Y-i--IaybZ/view?usp=sharing",
-        "image": "elocution.jpg"
+        "image": "elocution.jpg",
+        "sponsor":"",
+        "sponsord":""
     },
     "mmf": {
         "EventName": "Mass&MissFIesta",
@@ -37,7 +45,9 @@
         "Fee": 100,
         "Date": "30th Jan (Day 2)",
         "Rule": "https://drive.google.com/file/d/11ucvRMe68HuCO0I-Q249O9-9wCAa4Y2C/view?usp=sharing",
-        "image": "mmf.jpg"
+        "image": "mmf.jpg",
+        "sponsor":"",
+        "sponsord":""
     },
     "mystry": {
         "EventName": "Mystry",
@@ -45,15 +55,19 @@
         "Fee": 51,
         "Date": "30th Jan (Day 2)",
         "Rule": "",
-        "image":"mystry.jpg" 
+        "image":"mystry.jpg" ,
+        "sponsor":"",
+        "sponsord":""
     },
     "miw": {
-        "EventName": "Mock Interview Workshop",
+        "EventName": " Mock Interview Workshop",
         "Description": "Fiesta's mock interviews equip youth to ace challenging interviews through real-world simulations. Build confidence, sharpen communication skills, and gain valuable feedback to excel in high-stakes situations!",
         "Fee": 100,
         "Date": "29-30 Jan",
         "Rule": "https://drive.google.com/file/d/1rWeVPxJcSF4vPpKe2TQ4aZk1sMKC5Heg/view?usp=sharing",
-        "image": "miw.jpg"
+        "image": "miw.jpg",
+        "sponsor":"mc.png",
+        "sponsord":"MindCraft’s competency in various technologies and commitment to its clients has resulted in highly successful alliances with companies like AWS, IBM, Oracle, Microsoft & Salesforce. These strategic relationships have enabled MindCraft to provide proven technology solutions, to help enterprises attain higher levels of efficiency."
     },
     "ppt": {
         "EventName": "Paper presentation case study",
@@ -61,7 +75,9 @@
         "Fee": "100",
         "Date": "29th Jan (Day 1)",
         "Rule": "https://drive.google.com/file/d/13IAT5MMboB8-j4QkjW20-jK--KptdbqF/view?usp=sharing",
-        "image": "ppt.jpg"
+        "image": "ppt.jpg",
+        "sponsor":"",
+        "sponsord":""
     },
     "seminar1": {
         "EventName": "From Idea to Impact – Motivational Session by Successful Entrepreneur/ Start=up Founder",
@@ -69,7 +85,9 @@
         "Fee": 0,
         "Date": "29th Jan (Day 1)",
         "Rule": "https://drive.google.com/file/d/1bOwNfdbVmYJAR2PNUe5OfzCnaqGY2bcI/view?usp=sharing",
-        "image": "seminar.jpg"
+        "image": "seminar.jpg",
+        "sponsor":"",
+        "sponsord":""
     },
     "seminar2": {
         "EventName": "Session on How to plan for Start-up and legal & Ethical ",
@@ -77,7 +95,9 @@
         "Fee": 0,
         "Date": "29th Jan (Day 1)",
         "Rule": "https://drive.google.com/file/d/1bOwNfdbVmYJAR2PNUe5OfzCnaqGY2bcI/view?usp=sharing",
-        "image": "seminar.jpg"
+        "image": "seminar.jpg",
+        "sponsor":"",
+        "sponsord":""
     },
     "seminar3": {
         "EventName": "Workshop on “Raising Capital and Managing Finance for Startups”",
@@ -85,7 +105,9 @@
         "Fee": 0,
         "Date": "29th Jan (Day 1)",
         "Rule": "https://drive.google.com/file/d/1bOwNfdbVmYJAR2PNUe5OfzCnaqGY2bcI/view?usp=sharing",
-        "image": "seminar.jpg"
+        "image": "seminar.jpg",
+        "sponsor":"",
+        "sponsord":""
     },
     "seminar4": {
         "EventName": "Workshop on “Entrepreneuship and Innovation” as a Career Opportunity",
@@ -93,7 +115,9 @@
         "Fee": 0,
         "Date": "30th Jan (Day 2)",
         "Rule": "https://drive.google.com/file/d/1bOwNfdbVmYJAR2PNUe5OfzCnaqGY2bcI/view?usp=sharing",
-        "image": "seminar.jpg"
+        "image": "seminar.jpg",
+        "sponsor":"",
+        "sponsord":""
     },
     "seminar5": {
         "EventName": "Session on AccelaratorsIncubation Opporutnjities for Students & Faculties – Early Stage Entrepreneurs",
@@ -101,7 +125,9 @@
         "Fee": 0,
         "Date": "30th Jan (Day 2)",
         "Rule": "https://drive.google.com/file/d/1bOwNfdbVmYJAR2PNUe5OfzCnaqGY2bcI/view?usp=sharing",
-        "image": "seminar.jpg"
+        "image": "seminar.jpg",
+        "sponsor":"",
+        "sponsord":""
     },
     "seminar6": {
         "EventName": "Expert Talk on Innovation Development, TRL, and Tech Transfer",
@@ -109,6 +135,8 @@
         "Fee": 0,
         "Date": "30th Jan (Day 2)",
         "Rule": "https://drive.google.com/file/d/1bOwNfdbVmYJAR2PNUe5OfzCnaqGY2bcI/view?usp=sharing",
-        "image": "seminar.jpg"
+        "image": "seminar.jpg",
+        "sponsor":"",
+        "sponsord":""
     }
 }
