@@ -262,7 +262,7 @@ export default function ParticipantForm() {
       const numericPattern = /\b[0-9]{12,}\b/g;
       const numericMatch = text.match(numericPattern);
       if (numericMatch) {
-        console.log("Numeric Match Found:", numericMatch);
+        // console.log("Numeric Match Found:", numericMatch);
         setTransactionId(numericMatch[0]); // Use the first numeric match
         return numericMatch[0];
       }
@@ -271,7 +271,7 @@ export default function ParticipantForm() {
       const alphanumericPattern = /\b[A-Z0-9]{12,}\b/g;
       const alphanumericMatch = text.match(alphanumericPattern);
       if (alphanumericMatch) {
-        console.log("Alphanumeric Match Found:", alphanumericMatch);
+        // console.log("Alphanumeric Match Found:", alphanumericMatch);
         setTransactionId(alphanumericMatch[0]); // Use the first alphanumeric match
         return alphanumericMatch[0];
       }
@@ -355,13 +355,18 @@ export default function ParticipantForm() {
     //   return;
     // }
 
-    if (eventLimits[eventname] === 1 || eventname == "mystry")
+    if (eventLimits[eventname] == 1 || eventname == "mystry")
     {
-    if (participants.some((p) => Object.values(p).some((v) => !v ))   ) {
-      toast.error("Please fill out all fields for all participants.");
-      return;
+      if (participants.some((p) => 
+        !p.name || !p.email || !p.phone || !p.age  || !p.branch || !p.year
+    )) { 
+      // console.log(participants);
+        toast.error("Please fill out all fields for all participants.");
+        return;
     }
-  }
+    
+    }
+  
 
     if (eventname === "businessfair") {
       if (!stallType) {
@@ -400,7 +405,7 @@ export default function ParticipantForm() {
       groupName,
       stallDetails,
       driveLink,
-      stallType,
+      stallType,  
       transactionId,
       totalPrice,
       electronicProducts,
@@ -580,10 +585,10 @@ export default function ParticipantForm() {
                 <>
                   <Form.Label>College Name</Form.Label>
                   <Form.Control
-                    type="Fixed"
+                    type="text"
                     readOnly
                     placeholder="Thakur Polytechnic"
-                    value={participant.collegeName}
+                    value="Thakur Polytechnic"
                     onChange={(e) =>
                       handleInputChange(index, "collegeName", e.target.value)
                     }
@@ -633,7 +638,7 @@ export default function ParticipantForm() {
                         }
                       />
                     )}
-                  {eventname === "seminar1" && (
+                 {eventname === "seminar1" && (
                     <Form.Control
                       type="text"
                       placeholder="Branch"
@@ -667,7 +672,7 @@ export default function ParticipantForm() {
                     <Form.Control
                       type="text"
                       placeholder="Branch"
-                      value="Mechanical Engineering"
+                      value="Information Technology"
                       onChange={(e) =>
                         handleInputChange(index, "branch", e.target.value)
                       }
