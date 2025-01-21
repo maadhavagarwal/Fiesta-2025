@@ -358,9 +358,9 @@ export default function ParticipantForm() {
     if (eventLimits[eventname] == 1 || eventname == "mystry")
     {
       if (participants.some((p) => 
-        !p.name || !p.email || !p.phone || !p.age  || !p.branch || !p.year
+        !p.name || !p.email || !p.phone || !p.age   || !p.year
     )) { 
-      // console.log(participants);
+      console.log(participants);
         toast.error("Please fill out all fields for all participants.");
         return;
     }
