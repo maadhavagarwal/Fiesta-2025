@@ -505,7 +505,7 @@ export default function ParticipantForm() {
             </Form.Group>
             <Form.Group>
               <Form.Label>
-                Electronic Products(Must bring your own extensiob board)
+                Electronic Products(Must bring your own extension board)
               </Form.Label>
               <Form.Control
                 type="text"

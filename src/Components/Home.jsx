@@ -138,7 +138,8 @@ export default function Home() {
 
       {/* Last Year's Insights Section */}
       <section className="insights my-2">
-        <h2 className="text-center">Event Sponsor's</h2>
+        <h2 className="text-center">Our Sponsors</h2>
+        <h3 className="text-center">Mock Interview Worksjop Sponsor</h3>
       <Link to="https://www.mindcraft.in/">  <img src={require(`../Images/mc.png`)} alt="Sponsor" className="sponsor-image" /></Link>
       </section>
       <section className="insights my-2">
