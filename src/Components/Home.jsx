@@ -135,6 +135,12 @@ export default function Home() {
           Fiesta 2024 builds on the success of the first edition, offering an even greater variety of opportunities for growth and collaboration. This year, the event focuses on creating synergies between business leaders, aspiring entrepreneurs, industry experts, and social activists. Participants will have access to workshops, keynote sessions, and panel discussions that address the pressing issues of our time, from building sustainable businesses to creating positive social change.
         </p>
       </section>
+      <div className="insight-cards">
+      <div className="insight-card">
+          <Link to ="/events">  <h3>Events Registration Started</h3></Link>
+            <p>Click here to know more</p>
+          </div>
+          </div>
 
       {/* Last Year's Insights Section */}
       <section className="insights my-2">
