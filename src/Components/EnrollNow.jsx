@@ -5,6 +5,7 @@ import Tesseract from "tesseract.js";
 import { useNavigate, useParams } from "react-router-dom";
 import qr from "../Images/qr.jpg";
 import "../CSS/EnrolNow.css";
+import EntriesFull from "./EntriesFull";
 
 const eventAPIs = {
   businessfair: "https://sheetdb.io/api/v1/bztbzd3842qtg",
@@ -340,6 +341,7 @@ export default function ParticipantForm() {
     }
   };
 
+    
   useEffect(() => {
     calculateTotalPrice(participants);
   }, [participants]); // Recalculate price when participants change
@@ -445,6 +447,7 @@ export default function ParticipantForm() {
 
   return (
     <div className="participant-form container mt-5">
+    {eventname!=="ppt"?<>
       <h2>
         {eventname === "businessfair" ? "Business Fair" : "Event"} Registration
       </h2>
@@ -792,6 +795,8 @@ export default function ParticipantForm() {
           </>
         )}
       </Form>
+    
+    </>:<EntriesFull/>}
     </div>
   );
 }
