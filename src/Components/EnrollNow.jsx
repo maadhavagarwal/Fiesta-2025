@@ -5,7 +5,7 @@ import Tesseract from "tesseract.js";
 import { useNavigate, useParams } from "react-router-dom";
 import qr from "../Images/qr.jpg";
 import "../CSS/EnrolNow.css";
-import EntriesFull from "./EntriesFull";
+import EntriesFull from "./EFN";
 
 const eventAPIs = {
   businessfair: "https://sheetdb.io/api/v1/bztbzd3842qtg",
@@ -449,7 +449,12 @@ export default function ParticipantForm() {
 
   return (
     <div className="participant-form container mt-5">
-    {eventname!=="ppt" || "seminar6"?<>
+      {!(["ppt", "seminar6", "seminar1"].includes(eventname)) ? 
+      (
+        <>
+  
+
+{/* <> */}
       <h2>
         {eventname === "businessfair" ? "Business Fair" : "Event"} Registration
       </h2>
@@ -798,7 +803,10 @@ export default function ParticipantForm() {
         )}
       </Form>
     
-    </>:<EntriesFull/>}
+    </>):<>   <div>
+        <h1>Entries Are Full !!</h1>
+    </div></>}
+    
     </div>
   );
 }

@@ -60,6 +60,7 @@ export default function EventDetails() {
         </Col>
         <Col md={4} className="d-flex flex-column align-items-center">
           <Card className="p-3 text-center shadow action-card" style={{ borderRadius: "10px" }}>
+            
           <Button
               variant="primary"
               onClick={() => Navigate(`/eventdetails/${param}/enrollnow`)}
