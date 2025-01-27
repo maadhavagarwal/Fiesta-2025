@@ -53,23 +53,7 @@ export default function Seminars() {
                 key={index}
                 className="col-lg-3 col-md-4 col-sm-6 col-12 d-flex justify-content-center mb-4"
               >
-                {value.branch === "TSEC" ? (
-                  <div
-                    className="card-container"
-                    onClick={() => navigate(`/entries-full`)}
-                  >
-                    <img
-                      src={value.poster}
-                      className="event-image"
-                      alt={`${value.displayName} Poster`}
-                    />
-                    <div className="event-overlay">
-                      <h3 className="event-title">{value.displayName}</h3>
-                      <p className="event-subtitle">Click to Learn More</p>
-                    </div>
-                  </div>
-                ) : (
-                  <div
+               <div
                     className="card-container"
                     onClick={() => navigate(`/eventdetails/${value.seminarName}`)}
                   >
@@ -83,7 +67,6 @@ export default function Seminars() {
                       <p className="event-subtitle">Click to Learn More</p>
                     </div>
                   </div>
-                )}
               </div>
             ))
           ) : (

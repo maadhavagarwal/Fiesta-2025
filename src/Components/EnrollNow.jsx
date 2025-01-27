@@ -9,7 +9,7 @@ import EntriesFull from "./EntriesFull";
 
 const eventAPIs = {
   businessfair: "https://sheetdb.io/api/v1/bztbzd3842qtg",
-  sparkstudio: "https://sheetdb.io/api/v1/q47bs88i70un3",
+  sparkstudio: "https://sheetdb.io/api/v1/bqizz6sh1t616",
   ecoquiz: "https://sheetdb.io/api/v1/gzsa9kzk2svkv",
   miw: "https://sheetdb.io/api/v1/qn3zkb9qi9rwl",
   ppt: "https://sheetdb.io/api/v1/mx2irw7wdlozb",
@@ -445,9 +445,11 @@ export default function ParticipantForm() {
     }
   };
 
+  console.log(eventname)
+
   return (
     <div className="participant-form container mt-5">
-    {eventname!=="ppt"?<>
+    {eventname!=="ppt" || "seminar6"?<>
       <h2>
         {eventname === "businessfair" ? "Business Fair" : "Event"} Registration
       </h2>
