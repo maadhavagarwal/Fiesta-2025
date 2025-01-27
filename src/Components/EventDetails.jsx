@@ -60,6 +60,17 @@ export default function EventDetails() {
         </Col>
         <Col md={4} className="d-flex flex-column align-items-center">
           <Card className="p-3 text-center shadow action-card" style={{ borderRadius: "10px" }}>
+            {eventdata[param].EventName === "Expert Talk on Innovation Development, TRL, and Tech Transfer" ?
+
+            <Button
+              variant="primary"
+              onClick={() => Navigate(`/entries-full`)}
+              className="mb-3 register-btn"
+            >
+              Register Participants
+            </Button>
+            :
+            
             <Button
               variant="primary"
               onClick={() => Navigate(`/eventdetails/${param}/enrollnow`)}
@@ -67,6 +78,7 @@ export default function EventDetails() {
             >
               Register Participants
             </Button>
+}
             {eventdata[param].Rule && (
               <Button
                 variant="secondary"

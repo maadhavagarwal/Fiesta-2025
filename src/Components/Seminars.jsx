@@ -13,12 +13,12 @@ export default function Seminars() {
   const [selectedBranch, setSelectedBranch] = useState("");
 
   const seminars = [
-    { branch: "Computer Engineering", seminarName: "seminar1", poster: s1, displayName: "CO Seminar " },
-    { branch: "Mechanical Engineering", seminarName: "seminar2", poster: s2, displayName: "ME Seminar " },
-    { branch: "Electronics & Telecommunication", seminarName: "seminar3", poster: s3, displayName: "ETC Seminar " },
-    { branch: "Information tecnology", seminarName: "seminar4", poster: s4, displayName: "IF Seminar " },
-    { branch: "Civil Engineering", seminarName: "seminar5", poster: s5, displayName: "Civil Seminar " },
-    { branch: "TSEC", seminarName: "seminar6", poster: s6, displayName: "TSEC Seminar " },
+    { branch: "Computer Engineering", seminarName: "seminar1", poster: s1, displayName: "CO Seminar" },
+    { branch: "Mechanical Engineering", seminarName: "seminar2", poster: s2, displayName: "ME Seminar" },
+    { branch: "Electronics & Telecommunication", seminarName: "seminar3", poster: s3, displayName: "ETC Seminar" },
+    { branch: "Information tecnology", seminarName: "seminar4", poster: s4, displayName: "IF Seminar" },
+    { branch: "Civil Engineering", seminarName: "seminar5", poster: s5, displayName: "Civil Seminar" },
+    { branch: "TSEC", seminarName: "seminar6", poster: s6, displayName: "TSEC Seminar" },
   ];
 
   const handleBranchChange = (event) => {
@@ -30,6 +30,7 @@ export default function Seminars() {
   return (
     <div className="outer">
       <div className="container">
+        {/* Dropdown to select a branch */}
         <div className="row mb-4">
           <div className="col-12">
             <select onChange={handleBranchChange} className="form-select">
@@ -43,6 +44,8 @@ export default function Seminars() {
             </select>
           </div>
         </div>
+
+        {/* Seminar cards */}
         <div className="row">
           {filteredSeminars.length > 0 ? (
             filteredSeminars.map((value, index) => (
@@ -50,20 +53,37 @@ export default function Seminars() {
                 key={index}
                 className="col-lg-3 col-md-4 col-sm-6 col-12 d-flex justify-content-center mb-4"
               >
-                <div
-                  className="card-container"
-                  onClick={() => navigate(`/eventdetails/${value.seminarName}`)}
-                >
-                  <img
-                    src={value.poster}
-                    className="event-image"
-                    alt={`${value.displayName} Poster`}
-                  />
-                  <div className="event-overlay">
-                    <h3 className="event-title">{value.displayName}</h3>
-                    <p className="event-subtitle">Click to Learn More</p>
+                {value.branch === "TSEC" ? (
+                  <div
+                    className="card-container"
+                    onClick={() => navigate(`/entries-full`)}
+                  >
+                    <img
+                      src={value.poster}
+                      className="event-image"
+                      alt={`${value.displayName} Poster`}
+                    />
+                    <div className="event-overlay">
+                      <h3 className="event-title">{value.displayName}</h3>
+                      <p className="event-subtitle">Click to Learn More</p>
+                    </div>
                   </div>
-                </div>
+                ) : (
+                  <div
+                    className="card-container"
+                    onClick={() => navigate(`/eventdetails/${value.seminarName}`)}
+                  >
+                    <img
+                      src={value.poster}
+                      className="event-image"
+                      alt={`${value.displayName} Poster`}
+                    />
+                    <div className="event-overlay">
+                      <h3 className="event-title">{value.displayName}</h3>
+                      <p className="event-subtitle">Click to Learn More</p>
+                    </div>
+                  </div>
+                )}
               </div>
             ))
           ) : (
