@@ -1,5 +1,4 @@
 import React from "react";
-// import "../src/CSS/Entriesfull.css
 import "../CSS/Entriesfull.css";
 import { useNavigate } from "react-router-dom";
 

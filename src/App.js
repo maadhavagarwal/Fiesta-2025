@@ -9,7 +9,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import Seminar from './Components/Seminars';
 import Footer from './Components/Footer';
-import Entries from "../src/Components/Entriesfull"
 function App() {
   return (
     <BrowserRouter>
@@ -20,7 +19,6 @@ function App() {
         <Route path="/eventdetails/:eventname" element={<EventDetails />} />
         <Route path="/eventdetails/:eventname/enrollnow" element={<EnrollNow />} />
         <Route path="/seminars" element={<Seminar />} />
-        <Route path="/entries-full" element={<Entries/>}/>
       </Routes>
       <Toaster />
       <Footer/>
