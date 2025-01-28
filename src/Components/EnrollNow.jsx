@@ -485,9 +485,10 @@ export default function ParticipantForm() {
               >
                 <option value="">Select stall type</option>
                 {Object.keys(stallTypeLimits).map((type) => (
+                  type.charAt(0).toUpperCase() + type.slice(1)!=="Food"?
                   <option key={type} value={type}>
                     {type.charAt(0).toUpperCase() + type.slice(1)}
-                  </option>
+                  </option>:null
                 ))}
               </Form.Control>
             </Form.Group>
