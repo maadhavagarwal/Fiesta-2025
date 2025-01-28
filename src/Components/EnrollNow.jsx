@@ -476,6 +476,7 @@ export default function ParticipantForm() {
 
         {eventname === "businessfair" && (
           <>
+            <h4 className="d-flex justify-content-center my-3" style={{color:"red"}}>Registrations for <b className="mx-2">Food</b> is Closed</h4>
             <Form.Group>
               <Form.Label>Stall Type</Form.Label>
               <Form.Control
