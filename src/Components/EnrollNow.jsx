@@ -449,7 +449,7 @@ export default function ParticipantForm() {
 
   return (
     <div className="participant-form container mt-5">
-      {!(["ppt", "seminar6", "seminar1"].includes(eventname)) ? 
+      {!(["ppt", "seminar6", "seminar1","mmf"].includes(eventname)) ? 
       (
         <>
   
